@@ -1,5 +1,4 @@
 @import '../vendor/fonts/fonts.css';
-
 @import '../blocks/index.css';
 
 /* ******** UI ******** */
@@ -12,7 +11,6 @@
 @import '../blocks/ui/form/__button/form__button.css';
 
 /* ******** HEADER ******** */
-
 @import '../blocks/header/header.css';
 @import '../blocks/header/nav__mobile/nav__mobile.css';
 @import '../blocks/header/nav/nav.css';
@@ -32,6 +30,19 @@
 @import '../blocks/main/banner/__content/__form/_input/banner__content__form_input.css';
 @import '../blocks/main/banner/__content/__form/_btn/banner__content__form_btn.css';
 
+/* ******* RESULTS ******** */
+@import '../blocks/main/results/results.css';
+@import '../blocks/main/results/__news/results__news.css';
+@import '../blocks/main/results/__title/resutls__title.css';
+@import '../blocks/main/results/__button/results__button.css';
+@import '../blocks/main/results/__news/__card/results__news__card.css';
+@import '../blocks/main/results/__news/__card/_img/results__news__card_img.css';
+@import '../blocks/main/results/__news/__card/__content/results__news__card__content.css';
+@import '../blocks/main/results/__news/__card/__content/_date/results__news__card__content_date.css';
+@import '../blocks/main/results/__news/__card/__content/_source/results__news__card__content_source.css';
+@import '../blocks/main/results/__news/__card/__content/_text/results__news__card__content_text.css';
+@import '../blocks/main/results/__news/__card/__content/_title/results__news__card__content_title.css';
+
 /* ******* ABOUT ******** */
 @import '../blocks/main/about/about.css';
 @import '../blocks/main/about/__content/about__content.css';
@@ -41,7 +52,6 @@
 @import '../blocks/main/about/__content/__info/_text/about__content__info_text.css';
 
 /* ******* FOOTER ******** */
-
 @import '../blocks/footer/footer.css';
 @import '../blocks/footer/__content/footer__content.css';
 @import '../blocks/footer/__content/_copy/footer__content_copy.css';
