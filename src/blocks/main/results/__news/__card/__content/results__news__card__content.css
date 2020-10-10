@@ -1,0 +1,13 @@
+.results__news__card__content {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1024px) {
+  .results__news__card__content {
+    padding: 16px;
+  }
+}

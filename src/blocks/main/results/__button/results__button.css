@@ -1,0 +1,15 @@
+.results__button {
+  color: #000;
+  background: #fff;
+}
+
+.results__button:hover {
+  opacity: .8;
+}
+
+@media only screen and (max-width: 490px) {
+  .results__button {
+    width: 100%;
+    height: 56px;
+  }
+}
