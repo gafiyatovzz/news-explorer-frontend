@@ -2,6 +2,14 @@
 
 @import '../blocks/index.css';
 
+/* ******** UI ******** */
+@import '../blocks/ui/button/button.css';
+@import '../blocks/ui/button/__auth.css';
+@import '../blocks/ui/button/action/burger-menu.css';
+@import '../blocks/ui/button/action/close.css';
+
+/* ******** HEADER ******** */
+
 @import '../blocks/header/header.css';
 @import '../blocks/header/nav__mobile/nav__mobile.css';
 @import '../blocks/header/nav/nav.css';
@@ -12,7 +20,5 @@
 @import '../blocks/header/nav__mobile-wrapper/__menu/nav__mobile-wrapper__menu.css';
 @import '../blocks/header/nav__mobile-wrapper/__menu/_elem/nav__mobile-wrapper__menu.css';
 
-@import '../blocks/ui/button/button.css';
-@import '../blocks/ui/button/__auth.css';
-@import '../blocks/ui/button/action/burger-menu.css';
-@import '../blocks/ui/button/action/close.css';
+/* ******* BANNER ******** */
+@import '../blocks/main/banner/banner.css'

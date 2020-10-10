@@ -1,6 +1,16 @@
-.burger-menu,
-.close {
+.burger-menu {
   background: 0;
   border: none;
   outline: none;
+  display: none;
+  position: relative;
+  z-index: inherit;
+  width: 24px;
+  height: 24px;
+}
+
+@media only screen and (max-width: 767px) {
+  .burger-menu {
+    display: block;
+  }
 }

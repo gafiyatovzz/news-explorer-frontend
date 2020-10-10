@@ -11,9 +11,9 @@
 ._dark {
   background: #1A1B22;
 }
-
+/*
 @media only screen and (max-width: 767px) {
   .nav__mobile-wrapper {
     display: block;
   }
-}
+} */
