@@ -1,0 +1,12 @@
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+}

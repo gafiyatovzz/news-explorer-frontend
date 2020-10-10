@@ -1,0 +1,20 @@
+.nav__mobile {
+  display: none;
+
+  width: calc(100% - (16px * 2));
+  position: absolute;
+  left: 0;
+  padding: 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  background: rgba(196, 196, 196, 0.01)
+}
+
+@media only screen and (max-width: 767px) {
+  .nav__mobile {
+    display: flex;
+  }
+}

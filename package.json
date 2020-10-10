@@ -1,0 +1,19 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gafiyatovzz/news-explorer-frontend.git"
+  },
+  "author": "Zakir Gafiyatov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gafiyatovzz/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/gafiyatovzz/news-explorer-frontend#readme"
+}

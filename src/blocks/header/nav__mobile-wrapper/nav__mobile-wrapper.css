@@ -1,0 +1,19 @@
+.nav__mobile-wrapper {
+  width: 100vw;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  top: 56px;
+  height: 100vh;
+  display: none;
+}
+
+._dark {
+  background: #1A1B22;
+}
+
+@media only screen and (max-width: 767px) {
+  .nav__mobile-wrapper {
+    display: block;
+  }
+}

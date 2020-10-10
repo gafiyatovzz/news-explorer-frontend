@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+  background: rgba(196, 196, 196, 0.01)
+}
+
+._active {
+  border-bottom: 3px solid #fff;
+}
+
+._hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav {
+    height: 66px;
+  }
+}
