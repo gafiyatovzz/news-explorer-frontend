@@ -1,0 +1,34 @@
+.form__button {
+  color: #fff;
+  background: #2F71E5;
+  border: none;
+  width: 168px;
+  height: 100%;
+  position: absolute;
+  right: 0;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: center;
+  transition: background .2s ease-in-out;
+
+}
+
+.form__button:hover {
+  background: #347EFF;
+  cursor: pointer;
+}
+
+.form__button:active {
+  background: #2A65CC;
+}
+
+@media only screen and (max-width: 1024px) {
+  .form__button {
+    height: 56px;
+  }
+}

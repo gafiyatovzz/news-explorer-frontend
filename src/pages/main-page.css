@@ -7,6 +7,9 @@
 @import '../blocks/ui/button/__auth.css';
 @import '../blocks/ui/button/action/burger-menu.css';
 @import '../blocks/ui/button/action/close.css';
+@import '../blocks/ui/form/form.css';
+@import '../blocks/ui/form/__input/form__input.css';
+@import '../blocks/ui/form/__button/form__button.css';
 
 /* ******** HEADER ******** */
 
@@ -21,4 +24,10 @@
 @import '../blocks/header/nav__mobile-wrapper/__menu/_elem/nav__mobile-wrapper__menu.css';
 
 /* ******* BANNER ******** */
-@import '../blocks/main/banner/banner.css'
+@import '../blocks/main/banner/banner.css';
+@import '../blocks/main/banner/__content/banner__content.css';
+@import '../blocks/main/banner/__content/_text/banner__content_text.css';
+@import '../blocks/main/banner/__content/_title/banner__content_title.css';
+@import '../blocks/main/banner/__content/__form/banner__content__form.css';
+@import '../blocks/main/banner/__content/__form/_input/banner__content__form_input.css';
+@import '../blocks/main/banner/__content/__form/_btn/banner__content__form_btn.css';

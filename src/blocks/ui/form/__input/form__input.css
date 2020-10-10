@@ -1,0 +1,31 @@
+.form__input {
+  width: 100%;
+  border: none;
+  padding: 24px 21px;
+  border-radius: 100px;
+  width: 100%;
+  flex-grow: 2;
+  box-sizing: border-box;
+  backdrop-filter: blur(100px);
+}
+
+.form__input:focus {
+  outline: none;
+}
+
+.form__input::placeholder {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #B6BCBF;
+}
+
+@media only screen and (max-width: 1024px) {
+  .form__input {
+    height: 56px;
+  }
+}

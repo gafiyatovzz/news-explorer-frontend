@@ -1,0 +1,21 @@
+.banner__content {
+  padding: 160px 0 80px;
+  margin: 0 auto;
+  width: 608px;
+  position: relative;
+}
+
+@media only screen and (max-width: 1024px) {
+  .banner__content {
+    max-width: 448px;
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 495px) {
+  .banner__content {
+    padding: 86px 0 32px;
+    margin: 0 16px;
+    width: calc(100% - (16px * 2));
+  }
+}

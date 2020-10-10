@@ -13,7 +13,7 @@
     <nav class="nav ">
       <img src="utils/images/svg/logo.svg" alt="Логотип">
       <ul class="menu">
-        <li class="menu__elem">Главная</li>
+        <li class="menu__elem _active">Главная</li>
         <li class="menu__elem">Сохраненные статьи</li>
         <li class="menu__elem">
           <button class="button _hidden">Жак Ив Кусто
@@ -34,11 +34,7 @@
         </li>
       </ul>
     </nav>
-    <!-- <nav class="nav__mobile _dark">
-      <img class="logo" src="utils/images/svg/logo.svg" alt="Логотип">
-
-    </nav> -->
-    <nav class="nav__mobile-wrapper _hidden">
+    <nav class="nav__mobile-wrapper">
       <ul class="nav__mobile-wrapper__menu">
         <!-- <li class="nav__mobile-wrapper_head">
           <img src="utils/images/svg/logo.svg" alt="Логотип">
@@ -62,7 +58,19 @@
 
   <main class="main">
     <section class="banner">
-
+      <div class="banner__content">
+        <h1 class="banner__content_title">
+          Что творится в мире?
+        </h1>
+        <p class="banner__content_text">
+          Находите самые свежие статьи на любую тему
+           и сохраняйте в своём личном кабинете.
+        </p>
+        <form class="form banner__content__form" action="submit">
+          <input class="form__input banner__content__form_input" type="text" placeholder="Введите тему новости">
+          <button class="button form__button banner__content__form_btn" type="button">Искать</button>
+        </form>
+      </div>
     </section>
   </main>
   <footer class="footer">

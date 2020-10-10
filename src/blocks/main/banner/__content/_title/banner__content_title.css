@@ -1,0 +1,18 @@
+.banner__content_title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 64px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  margin-bottom: 32px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .banner__content_title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
