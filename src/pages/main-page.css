@@ -31,3 +31,11 @@
 @import '../blocks/main/banner/__content/__form/banner__content__form.css';
 @import '../blocks/main/banner/__content/__form/_input/banner__content__form_input.css';
 @import '../blocks/main/banner/__content/__form/_btn/banner__content__form_btn.css';
+
+/* ******* ABOUT ******** */
+@import '../blocks/main/about/about.css';
+@import '../blocks/main/about/__content/about__content.css';
+@import '../blocks/main/about/__content/__avatar/about__content__avatar.css';
+@import '../blocks/main/about/__content/__info/about__content__info.css';
+@import '../blocks/main/about/__content/__info/_title/about__content__info_title.css';
+@import '../blocks/main/about/__content/__info/_text/about__content__info_text.css';

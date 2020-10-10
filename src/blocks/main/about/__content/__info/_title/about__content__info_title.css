@@ -1,0 +1,25 @@
+.about__content__info_title {
+  font-family: 'Roboto Slab', sans-serif;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  margin-bottom: 24px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about__content__info_title {
+    font-size: 30px;
+    line-height: 40px;
+    margin-top: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about__content__info_title {
+    margin-top: 24px;
+  }
+}
