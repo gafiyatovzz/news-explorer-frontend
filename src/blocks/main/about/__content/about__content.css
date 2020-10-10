@@ -1,6 +1,5 @@
 .about__content {
-  padding: 80px 105px;
-  margin: 0 auto;
+  margin: 80px auto;
   display: flex;
   position: relative;
   box-sizing: border-box;
@@ -8,16 +7,14 @@
 
 @media only screen and (max-width: 1024px) {
   .about__content {
-    padding: 40px;
+    width: 80%;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .about__content {
-    padding: 24px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 85%;
   }
 }

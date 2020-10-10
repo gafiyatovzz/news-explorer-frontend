@@ -6,10 +6,6 @@ html {
   font-size: 16px;
 }
 
-.root {
-  padding: 0 104px;
-}
-
 ul {
   list-style: none;
   padding: 0;
@@ -20,12 +16,34 @@ a {
   text-decoration: none;
 }
 
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+a:focus {
+  outline: none;
+}
+
 p {
   padding: 0;
 }
 
+.root {
+  padding: 0 104px;
+  width: calc(100% - (104px * 2));
+}
+
 @media only screen and (max-width: 1024px) {
   .root {
-    padding: 0 32px;
+    padding: 0 40px;
+    width: calc(100% - (40px * 2));
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .root {
+    padding: 0 16px;
+    width: calc(100% - (16px * 2));
   }
 }

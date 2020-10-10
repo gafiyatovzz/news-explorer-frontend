@@ -3,13 +3,12 @@
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
   position: absolute;
   z-index: 999;
-  width: calc(100% - (104px * 2));
 }
 
 @media only screen and (max-width: 1024px) {
   .header {
     height: 66px;
-    width: calc(100% - (32px * 2));
+
   }
 }
 
