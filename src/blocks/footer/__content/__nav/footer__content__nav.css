@@ -9,5 +9,6 @@
   .footer__content__nav {
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
   }
 }
