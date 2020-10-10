@@ -1,0 +1,10 @@
+.footer__content__nav__list {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 495px) {
+  .footer__content__nav__list {
+    flex-direction: column;
+  }
+}

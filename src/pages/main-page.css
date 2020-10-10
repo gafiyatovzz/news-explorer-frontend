@@ -39,3 +39,14 @@
 @import '../blocks/main/about/__content/__info/about__content__info.css';
 @import '../blocks/main/about/__content/__info/_title/about__content__info_title.css';
 @import '../blocks/main/about/__content/__info/_text/about__content__info_text.css';
+
+/* ******* FOOTER ******** */
+
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__content/footer__content.css';
+@import '../blocks/footer/__content/_copy/footer__content_copy.css';
+@import '../blocks/footer/__content/__nav/footer__content__nav.css';
+@import '../blocks/footer/__content/__nav/_link/footer__content__nav_link.css';
+@import '../blocks/footer/__content/__nav/__list/footer__content__nav__list.css';
+@import '../blocks/footer/__content/__nav/__list/_social/footer__content__nav__list_social.css';
+@import '../blocks/footer/__content/__nav/__list/_elem/footer__content__nav__list_elem.css';
