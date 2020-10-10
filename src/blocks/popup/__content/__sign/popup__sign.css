@@ -1,0 +1,20 @@
+.popup__sign {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  margin: 0;
+  color: #000000;
+}
+
+.popup__sign_link {
+  color: #2F71E5;
+}
+
+
+.popup__sign_success {
+  text-align: left;
+}
