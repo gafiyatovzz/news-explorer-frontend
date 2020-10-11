@@ -7,10 +7,6 @@
   background: rgba(196, 196, 196, 0.01)
 }
 
-._active {
-  border-bottom: 3px solid #fff;
-}
-
 ._hidden {
   display: none;
 }
