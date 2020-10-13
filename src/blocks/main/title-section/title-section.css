@@ -1,0 +1,11 @@
+.title-section {
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 767px) {
+  .title-section {
+    padding-top: 64px;
+    padding-bottom: 32px;
+  }
+}

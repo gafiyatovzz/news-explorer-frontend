@@ -1,19 +1,37 @@
 {
-  "name": "news-explorer-frontend",
-  "version": "1.0.0",
-  "description": "",
-  "main": ".eslintrc.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gafiyatovzz/news-explorer-frontend.git"
-  },
   "author": "Zakir Gafiyatov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gafiyatovzz/news-explorer-frontend/issues"
   },
-  "homepage": "https://github.com/gafiyatovzz/news-explorer-frontend#readme"
+  "homepage": "https://github.com/gafiyatovzz/news-explorer-frontend#readme",
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for News search app",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gafiyatovzz/news-explorer-frontend.git"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^1.0.0",
+    "webpack": "5.0.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-md5-hash": "0.0.6"
+  }
 }

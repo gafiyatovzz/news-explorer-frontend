@@ -20,6 +20,19 @@
   border-bottom: 3px solid #fff;
 }
 
+.is-active_dark {
+  border-color: #1A1B22;
+}
+
+.dark {
+  color: #1A1B22;
+}
+
+.dark button {
+  border-color: #1A1B22;
+  color: #1A1B22;
+}
+
 @media only screen and (max-width: 1024px) {
   .menu__elem {
     font-size: 16px;
