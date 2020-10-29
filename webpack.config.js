@@ -2,6 +2,8 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
+const FileLoader = require('file-loader');
+const ImageWebpackLoader = require('image-webpack-loader');
 
 const newLocal = 'dist';
 module.exports = {
@@ -11,21 +13,39 @@ module.exports = {
     filename: '[name].[chunkhash].js'
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: {
-        loader: "babel-loader"
+    rules: [
+      {
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader"
+        },
+        exclude: /node_modules/
       },
-      exclude: /node_modules/
-    },
-    {
-      test: /\.css/,
-      use: [MiniCssExtractPlugin.loader, 'css-loader']
-    }
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: { sourceMap: true }
+          }, {
+            loader: 'postcss-loader',
+            options: { sourceMap: true, config: { path: 'src/js/postcss.config.js' } }
+          }
+        ]
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+        },
+      },
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: 'styles.[contenthash].css' }),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/main.html',
