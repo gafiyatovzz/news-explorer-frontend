@@ -1,26 +1,38 @@
-export default class Popup {
-  constructor(item, content) {
+class Popup {
+  constructor(item) {
     this.item = item;
-    this.content = content;
-    this.container = this.item.querySelector('.popup__content');
-    this.item.querySelector('.popup__close').addEventListener('click', () => this.close());
+    this._container = this.item.querySelector('.popup__content');
+    this._container.addEventListener('click', (e) => {
+      const btn = this._container.querySelector('.popup__close');
+
+      if (e.target.classList.contains('popup__auth_link')) {
+        this.clearContent();
+        this.setContent(AuthTemplate);
+      } else if (e.target.classList.contains('popup__sign_link')) {
+        this.clearContent();
+        this.setContent(SigninTemplate);
+      }
+
+      btn.addEventListener('click', () => this.close())
+    });
   }
 
-  #setContent() {
-    this.container.insertAdjacentElement('afterBegin', this.content);
+  setContent(content) {
+    this.clearContent();
+    this._container.insertAdjacentHTML('afterBegin', content);
   }
 
-  #clearContent() {
-    while(this.container.firstChild) {
-      this.container.removeChild(this.container.firstChild)
+  clearContent() {
+    while(this._container.firstChild) {
+      this._container.removeChild(this._container.firstChild)
     }
   }
 
   open() {
-    this.popup.classList.add('._is-opened')
+    this.item.classList.add('_is-opened');
   }
 
   close() {
-    this.popup.classList.remove('._is-opened')
+    this.item.classList.remove('_is-opened');
   }
 }
