@@ -1,6 +1,6 @@
 .results__news {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 400px);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
   column-gap: 16px;
   row-gap: 16px;
   justify-content: center;

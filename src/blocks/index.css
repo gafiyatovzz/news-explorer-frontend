@@ -30,6 +30,10 @@ p {
   padding: 0;
 }
 
+._hidden {
+  display: none;
+}
+
 .root {
   padding: 0 104px;
   width: calc(100% - (104px * 2));

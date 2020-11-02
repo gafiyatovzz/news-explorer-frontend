@@ -3,4 +3,11 @@
   background: #fff;
   padding: 35px;
   border-radius: 16px;
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  top: -30px;
+  right: -35px;
 }
