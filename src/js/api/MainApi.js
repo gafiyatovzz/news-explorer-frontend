@@ -1,15 +1,55 @@
 export default class MainApi {
-  constructor() {}
+  constructor(baseUrl, headers) {
+    this.baseUrl = baseUrl;
+    this.headers = headers;
+  }
 
-  signup() {}
+  makeFetch(url, method = 'GET', body = undefined) {
+    if (body) JSON.stringify(body);
+    return fetch(`${this.baseUrl}/${url}`, {
+      method,
+      headers: this.headers,
+      body
+    })
+      .then(res => {
+        if (!res.ok) Promise.reject('Что-то пошло не так');
+        return res.json();
+      })
+      .catch(e => {
+        console.log('Message Error - ', {
+          message: e.message,
+          statuseCode: e.statuseCode,
+        });
+      });
+  }
 
-  signin() {} //аутентифицирует пользователя на основе почты и пароля;
+  signup() {
+    return this.makeFetch('/signup', 'POST', {
+      name, email, password
+    })
+  }
 
-  getUserData() {}
+  signin() {
+    return this.makeFetch('/signin', 'POST', {
+      name, email
+    })
+  } //аутентифицирует пользователя на основе почты и пароля;
 
-  getArticles() {}
+  getUserData() {
+    return this.makeFetch('users/me');
+  }
 
-  createArticle() {}
+  getArticles() {
+    return this.makeFetch('/articles');
+  }
 
-  removeArticle() {}
+  createArticle({ keyword, title, text, date, source, link, image }) {
+    return this.makeFetch('/articles', 'POST', {
+      keyword, title, text, date, source, link, image
+    })
+  }
+
+  removeArticle(id) {
+    return this.makeFetch(`/articles/${id}`, 'DELETE');
+  }
 }
