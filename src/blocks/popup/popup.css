@@ -1,6 +1,5 @@
 .popup {
   position: fixed;
-  background-color: rgba(0,0,0,.5);
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -8,4 +7,20 @@
   align-items: center;
   justify-content: center;
   display: none;
+  overflow-y: hidden;
+}
+
+._is-opened {
+  display: flex;
+}
+
+
+
+.popup__wrapper {
+  position: absolute;
+  top:0; right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5);
+  z-index: 1;
 }

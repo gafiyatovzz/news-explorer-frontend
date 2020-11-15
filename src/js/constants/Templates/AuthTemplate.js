@@ -7,6 +7,19 @@ const AuthTemplate = `
             name="signup"
             novalidate
           >
+          <div class="input__container">
+              <label for="username" class="popup__form_label">Имя</label>
+              <input
+                type="text"
+                class="popup__form_input"
+                id="username"
+                minlength="2"
+                maxlength="30"
+                placeholder="Введите своё имя"
+                required
+              />
+              <span id="error-username" class="error-message"></span>
+            </div>
             <div class="input__container">
               <label for="email" class="popup__form_label">Email</label>
               <input
@@ -14,6 +27,7 @@ const AuthTemplate = `
                 class="popup__form_input"
                 id="email"
                 placeholder="Введите email"
+                required
               />
               <span id="error-email" class="error-message"></span>
             </div>
@@ -23,20 +37,14 @@ const AuthTemplate = `
                 type="password"
                 class="popup__form_input"
                 id="password"
+                minlength="2"
+                maxlength="30"
                 placeholder="Введите пароль"
+                required
               />
               <span id="error-password" class="error-message"></span>
             </div>
-            <div class="input__container">
-              <label for="username" class="popup__form_label">Имя</label>
-              <input
-                type="text"
-                class="popup__form_input"
-                id="username"
-                placeholder="Введите своё имя"
-              />
-              <span id="error-username" class="error-message"></span>
-            </div>
+
             <button class="button popup__button" disabled>
               Зарегистрироваться
             </button>

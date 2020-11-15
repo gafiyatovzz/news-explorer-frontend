@@ -1,4 +1,4 @@
-export default class MainApi {
+class MainApi {
   constructor(baseUrl, headers) {
     this.baseUrl = baseUrl;
     this.headers = headers;
@@ -11,12 +11,9 @@ export default class MainApi {
       headers: this.headers,
       body
     })
-      .then(res => {
-        if (!res.ok) Promise.reject('Что-то пошло не так');
-        return res.json();
-      })
+      .then(res => res.json())
       .catch(e => {
-        console.log('Message Error - ', {
+        console.log('Message Error: ', {
           message: e.message,
           statuseCode: e.statuseCode,
         });

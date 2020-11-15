@@ -4,6 +4,7 @@ class Popup {
     this._container = this.item.querySelector('.popup__content');
     this._container.addEventListener('click', (e) => {
       const btn = this._container.querySelector('.popup__close');
+      const wraper = this.item.querySelector('.popup__wrapper');
 
       if (e.target.classList.contains('popup__auth_link')) {
         this.clearContent();
@@ -13,13 +14,15 @@ class Popup {
         this.setContent(SigninTemplate);
       }
 
-      btn.addEventListener('click', () => this.close())
+      wraper.addEventListener('click', () => this.close());
+      btn.addEventListener('click', () => this.close());
+
     });
   }
 
   setContent(content) {
     this.clearContent();
-    this._container.insertAdjacentHTML('afterBegin', content);
+    this._container.insertAdjacentHTML('beforeEnd', content);
   }
 
   clearContent() {

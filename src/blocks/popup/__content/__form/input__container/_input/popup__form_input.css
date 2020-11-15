@@ -2,7 +2,6 @@
   border: none;
   border-bottom: 1px solid #000;
   opacity: .2;
-  margin-bottom: 30px;
   height: 40px;
 
   font-family: 'Inter', sans-serif;
@@ -11,14 +10,10 @@
   font-size: 14px;
   line-height: 17px;
   color: #000;
+  margin-bottom: 10px;
 }
 
 .popup__form_input:focus {
   outline: none;
   opacity: 1;
-}
-
-
-.popup__form_input:last-of-type {
-  margin-bottom: 40px;
 }
