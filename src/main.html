@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./pages/main-page.css" />
+    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
   </head>
   <body>
     <header class="header root">
@@ -282,12 +282,6 @@
       </div>
     </footer>
 
-    <script src="js/api/MainApi.js"></script>
-    <script src="js/constants/Templates/Signintemplate.js"></script>
-    <script src="js/constants/Templates/AuthTemplate.js"></script>
-    <script src="js/components/Popup.js"></script>
-    <script src="js/constants/Errors/ERROR_MESSAGE.js"></script>
-    <script src="js/components/Form.js"></script>
-    <script src="index.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-class Form {
+export default class Form {
   constructor(item, message) {
     this.form = item.querySelector('.popup__form');
     this.item = item;

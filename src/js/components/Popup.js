@@ -1,4 +1,4 @@
-class Popup {
+export default class Popup {
   constructor(item) {
     this.item = item;
     this._container = this.item.querySelector('.popup__content');

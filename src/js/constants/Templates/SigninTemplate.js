@@ -50,4 +50,6 @@ const SigninTemplate = `
               />
             </svg>
           </div>
-`
+`;
+
+export default SigninTemplate;

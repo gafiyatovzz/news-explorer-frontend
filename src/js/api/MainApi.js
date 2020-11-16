@@ -1,4 +1,4 @@
-class MainApi {
+export default class MainApi {
   constructor(baseUrl, headers) {
     this.baseUrl = baseUrl;
     this.headers = headers;

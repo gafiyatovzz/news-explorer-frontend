@@ -70,4 +70,6 @@ const AuthTemplate = `
               />
             </svg>
           </div>
-`
+`;
+
+export default AuthTemplate;
