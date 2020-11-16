@@ -14,5 +14,5 @@ node_modules
 .DS_Store
 .idea
 .vscode
-client/src
+/src
 config/keys.dev.js
