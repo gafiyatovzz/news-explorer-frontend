@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -14,8 +15,9 @@ module.exports = {
   entry: "./index.js",
   output: {
     path: path.resolve(__dirname, newLocal),
-    filename: "js/script.[chunkhash].js",
+    filename: "js/script.[hash].js",
   },
+
   module: {
     rules: [
       {
@@ -29,22 +31,20 @@ module.exports = {
         test: /\.css$/i,
         use: [
           isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader", 'postcss-loader'
+          "css-loader",
+          "postcss-loader",
         ],
       },
       {
-        test: /\.(png|jpeg|gif)$/i,
-        // type: 'asset/resource',
+        test: /\.(png|jpeg|gif|ico)$/i,
         use: [
           {
             loader: "file-loader",
             options: {
               name: "[name].[ext]",
-              //publicPath: "./assets/images",
               outputPath: "assets/images",
-              //useRelativePath: true,
               esModule: false,
-            }, // указали папку, куда складывать изображения
+            },
           },
           {
             loader: "image-webpack-loader",
@@ -54,7 +54,6 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/i,
-        //type: 'asset/inline',
         use: [
           {
             loader: "file-loader",
@@ -90,6 +89,7 @@ module.exports = {
       inject: false,
       template: "./main.html",
       filename: "main.html",
+      // favicon: "./assets/images"
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -99,7 +99,11 @@ module.exports = {
       },
       canPrint: true,
     }),
+    new webpack.DefinePlugin({
+      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
+    }),
     new CleanWebpackPlugin(),
     new WebpackMd5Hash(),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };
