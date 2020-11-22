@@ -34,3 +34,10 @@
   src: url('./Source-Sans/sourcesanspro-regular.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: url('./Inter/inter-regular.woff') format('woff');
+}
+

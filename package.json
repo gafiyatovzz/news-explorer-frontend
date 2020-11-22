@@ -10,8 +10,9 @@
   "description": "Frontend for News search app",
   "main": "./src/index.js",
   "scripts": {
-    "build": "webpack --mode production",
-    "dev": "webpack-dev-server --mode development --open --watch"
+    "build": "rimraf dist && webpack --mode production",
+    "dev": "webpack-dev-server --mode development --open --watch",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -26,9 +27,11 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
+    "autoprefixer": "^10.0.2",
     "babel-loader": "^8.2.1",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^4.3.0",
+    "cssnano": "^4.1.10",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "image-webpack-loader": "^7.0.1",
