@@ -73,7 +73,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: "./main.html",
-      filename: "main.[contenthash].html",
+      filename: "main.html",
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
