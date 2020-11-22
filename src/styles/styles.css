@@ -14,11 +14,9 @@
 
 /* ******** HEADER ******** */
 @import '../blocks/header/header.css';
-@import '../blocks/header/nav__mobile/nav__mobile.css';
 @import '../blocks/header/nav/nav.css';
 @import '../blocks/header/nav/menu/menu.css';
 @import '../blocks/header/nav/menu/__elem/menu__elem.css';
-@import '../blocks/header/nav__mobile/nav__mobile.css';
 @import '../blocks/header/nav__mobile-wrapper/nav__mobile-wrapper.css';
 @import '../blocks/header/nav__mobile-wrapper/__menu/nav__mobile-wrapper__menu.css';
 @import '../blocks/header/nav__mobile-wrapper/__menu/_elem/nav__mobile-wrapper__menu.css';

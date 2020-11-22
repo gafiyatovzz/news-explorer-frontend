@@ -1,23 +1,23 @@
 export default class MainApi {
-  constructor(baseUrl, headers) {
+  constructor(baseUrl, header) {
     this.baseUrl = baseUrl;
-    this.headers = headers;
+    this.header = header;
   }
 
   makeFetch(url, method = 'GET', body = undefined) {
-    if (body) JSON.stringify(body);
-    return fetch(`${this.baseUrl}/${url}`, {
-      method,
-      headers: this.headers,
-      body
-    })
-      .then(res => res.json())
-      .catch(e => {
-        console.log('Message Error: ', {
-          message: e.message,
-          statuseCode: e.statuseCode,
+    body ? JSON.stringify(body) :
+      fetch(`${this.baseUrl}/${url}`, {
+        method,
+        headers: this.header,
+        body
+      })
+        .then(res => res.json())
+        .catch(e => {
+          console.log('Message Error: ', {
+            message: e.message,
+            statuseCode: e.statuseCode,
+          });
         });
-      });
   }
 
   signup() {
@@ -26,10 +26,8 @@ export default class MainApi {
     })
   }
 
-  signin() {
-    return this.makeFetch('/signin', 'POST', {
-      name, email
-    })
+  signin(email, password) {
+    return this.makeFetch('/signin', 'POST', userData)
   } //аутентифицирует пользователя на основе почты и пароля;
 
   getUserData() {

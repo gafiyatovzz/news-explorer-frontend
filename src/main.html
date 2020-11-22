@@ -3,13 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+    <title>News Explorer</title>
+    <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="<%=  htmlWebpackPlugin.files.css  %>">
   </head>
   <body>
     <header class="header root">
       <nav class="nav">
-        <img src="assets/images/svg/logo.svg" alt="Логотип" />
+        <a href="#">
+          <img src="<%= require('./assets/images/logo.svg') %>" alt="Логотип">
+        </a>
         <ul class="menu">
           <li class="menu__elem is-active">Главная</li>
           <li class="menu__elem">Сохраненные статьи</li>
@@ -20,7 +23,7 @@
                   <span>Авторизоваться</span>
                   <img
                     class="ico-logout"
-                    src="assets/images/svg/icons/logout.svg"
+                    src="<%= require('./assets/images/logout.svg') %>"
                     alt="Иконка выхода"
                   />
                 </button>
@@ -28,7 +31,7 @@
               <li class="menu__elem_mobile">
                 <button class="burger-menu">
                   <img
-                    src="../src/assets/images/svg/icons/burger.svg"
+                    src="<%= require('./assets/images/burger.svg') %>"
                     alt="Кнопка открытия меню"
                   />
                 </button>
@@ -42,12 +45,12 @@
         <div class="nav__mobile-wrapper_head">
           <img
             class="logo_black"
-            src="assets/images/svg/logo.svg"
+            src="<%= require('./assets/images/logo.svg') %>assets/images/logo.svg"
             alt="Логотип"
           />
           <button class="close" type="button">
             <img
-              src="assets/images/svg/icons/close.svg"
+              src="<%= require('./assets/images/close.svg') %>"
               alt="Кнопка закрытия меню"
             />
           </button>
@@ -98,7 +101,7 @@
         <div class="results__news">
           <article class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png') %>"
               alt=""
               class="results__news__card_img"
             />
@@ -117,7 +120,7 @@
           </article>
           <article class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png') %>"
               alt=""
               class="results__news__card_img"
             />
@@ -136,7 +139,7 @@
           </article>
           <article class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png') %>"
               alt=""
               class="results__news__card_img"
             />
@@ -162,7 +165,7 @@
           <div class="about__content__avatar">
             <img
               class="about__content__avatar_img"
-              src="./assets/images/image-03.png"
+              src="<%= require('./assets/images/image-03.png') %>"
               alt="Аватар создателя сайта"
             />
           </div>
@@ -183,41 +186,7 @@
 
       <div class="popup">
         <div class="popup__wrapper"></div>
-        <div class="popup__content popup__signin">
-          <h2 class="popup__title">Вход</h2>
-          <form
-            class="form popup__form"
-            action="http://httpbin.org/post"
-            method="POST"
-            name="signup"
-            novalidate
-          >
-            <div class="input__container">
-              <label for="email" class="popup__form_label">Email</label>
-              <input
-                type="email"
-                class="popup__form_input popup__input-email"
-                id="email"
-
-                placeholder="Введите email"
-              />
-              <span id="error-email" class="error-message"></span>
-            </div>
-            <div class="input__container">
-              <label for="password" class="popup__form_label">Пароль</label>
-              <input
-                type="password"
-                class="popup__form_input popup__input-password"
-                id="password"
-                placeholder="Введите пароль"
-              />
-              <span id="error-password" class="error-message"></span>
-            </div>
-            <button class="button popup__button" disabled>Войти</button>
-          </form>
-          <p class="popup__sign">
-            или <a class="popup__auth_link" href="#">Зарегистрироваться</a>
-          </p>
+        <div class="popup__content">
           <div class="popup__close">
             <svg
               width="40"
@@ -241,7 +210,6 @@
 
       <div class="popup popup__sucess">
         <div class="popup__wrapper"></div>
-
       </div>
     </main>
 
@@ -269,12 +237,12 @@
           >
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="./assets/images/svg/icons/github.svg" alt="Github" />
+                <img src="<%= require('./assets/images/github.svg') %>" alt="Github" />
               </a>
             </li>
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="./assets/images/svg/icons/fb.svg" alt="Facebook" />
+                <img src="<%= require('./assets/images/fb.svg') %>" alt="Facebook" />
               </a>
             </li>
           </ul>
@@ -282,6 +250,7 @@
       </div>
     </footer>
 
-    <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+    <script src="<%=  htmlWebpackPlugin.files.js  %>"></script>
+    <!-- <script type="module" src="./js/script.js"></script> -->
   </body>
 </html>

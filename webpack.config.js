@@ -1,16 +1,20 @@
-const path = require("path");
+const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const WebpackMd5Hash = require("webpack-md5-hash");
-const FileLoader = require("file-loader");
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const newLocal = "dist";
 const ImageWebpackLoader = require("image-webpack-loader");
 
-const newLocal = "dist";
+const isDev = process.env.NODE_ENV === 'development';
+
 module.exports = {
-  entry: { main: "./src/index.js" },
+  context: path.resolve(__dirname, 'src'),
+  entry: './index.js',
   output: {
     path: path.resolve(__dirname, newLocal),
-    filename: "[name].[chunkhash].js",
+    filename: "js/script.[chunkhash].js",
   },
   module: {
     rules: [
@@ -22,24 +26,64 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.css$/i,
+        use: [
+          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          'css-loader'
+        ],
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
+        test: /\.(png|jpeg|gif|svg)$/i,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            publicPath: 'images',
+            outputPath: 'images',
+            useRelativePath: true,
+            esModule: false,
+          } // указали папку, куда складывать изображения
         },
+        {
+          loader: 'image-webpack-loader',
+          options: {
+
+          }
+        },
+        ]
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: "/vendor/fonts",
+            }
+          }
+        ]
       },
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: "./styles/styles.[contenthash].css" }),
+    new MiniCssExtractPlugin({
+      filename: 'styles/styles.[contenthash].css'
+    }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: "./src/main.html",
-      filename: "main.html",
+      template: "./main.html",
+      filename: "main.[contenthash].html",
     }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default'],
+      },
+      canPrint: true
+    }),
+    new CleanWebpackPlugin(),
+    new WebpackMd5Hash(),
   ],
 };

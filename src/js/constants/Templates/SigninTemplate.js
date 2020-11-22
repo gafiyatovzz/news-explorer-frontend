@@ -24,10 +24,12 @@ const SigninTemplate = `
                 class="popup__form_input"
                 id="password"
                 placeholder="Введите пароль"
+                minlength="2"
+                maxlength="30"
               />
               <span id="error-password" class="error-message"></span>
             </div>
-            <button class="button popup__button" disabled>Войти</button>
+            <button type="submit" class="button popup__button" disabled>Войти</button>
           </form>
           <p class="popup__sign">
             или <a class="popup__auth_link" href="#">Зарегистрироваться</a>

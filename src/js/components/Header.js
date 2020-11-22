@@ -2,26 +2,25 @@ export default class Header {
   constructor(props) {
     this.props = props;
     this.loggedTemplate = [
-    {
-      elem: 'Главная',
-      link: '/',
-    },
-    {
-      elem: 'Сохраненные статьи',
-      link: '/saved-news',
-    },
-    {
-      ico: {
-        link: '',
-        alt: '',
+      {
+        elem: 'Главная',
+        link: '/',
+      },
+      {
+        elem: 'Сохраненные статьи',
+        link: '/saved-news',
+      },
+      {
+        ico: {
+          link: '',
+          alt: '',
+        }
       }
-    }
-
-  ]
+    ]
   }
 
   isLogged() {
-    if (this.props.isLoggedIn === true) {
+    if (this.props.isLoggedIn) {
       const btnAuth = document.querySelector('.button__auth');
       const btnAuthIco = btnAuth.querySelector('.ico');
       const savedNews = document.querySelector('.saved-news');

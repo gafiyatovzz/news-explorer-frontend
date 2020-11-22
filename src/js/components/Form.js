@@ -1,9 +1,8 @@
 export default class Form {
-  constructor(item, message) {
-    this.form = item.querySelector('.popup__form');
-    this.item = item;
+  constructor(form, message) {
+    this.inputs = form.querySelectorAll('input');
     this.message = message;
-    this._validateForm();
+    //this._validateForm();
   }
 
   setServerError() {
@@ -17,12 +16,21 @@ export default class Form {
   } //валидирует переданный в качестве аргумента инпут;
 
   _validateForm() {
-    this.form.addEventListener('input', (e) => {
-      this._validateInputElement(e.target, e.target.closest('div').querySelector('.error-message'));
-    })
+    this.inputs.forEach(element => {
+      element.addEventListener('input', (e) => {
+        this._validateInputElement(e.target, e.target.closest('div').querySelector('.error-message'));
+      })
+    });
+
   } //валидирует всю форму;
 
-  _clear() { } //вспомогательный метод, очищает поля формы;
+  _clear() {
+    this.inputs.forEach(input => {
+      input.value = ''
+    })
+  } //вспомогательный метод, очищает поля формы;
 
-  _getInfo() { } //вспомогательный метод, возвращает данные формы.
+  _getInfo() {
+
+  } //вспомогательный метод, возвращает данные формы.
 }
