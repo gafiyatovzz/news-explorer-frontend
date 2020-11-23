@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Explorer</title>
-    <!-- <link rel="stylesheet" href="./styles/styles.css"> -->
-    <link rel="stylesheet" type="text/css" href="<%=  htmlWebpackPlugin.files.css  %>">
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./assets/images/apple-touch-icon.png') %>" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= require('./assets/images/favicon-32x32.png') %>" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= require('./assets/images/favicon-16x16.png') %>" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="<%=  htmlWebpackPlugin.files.css  %>"
+    />
   </head>
   <body>
     <header class="header root">
       <nav class="nav">
         <a href="#">
-          <img src="<%= require('./assets/images/logo.svg') %>" alt="Логотип">
+          <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип" />
         </a>
         <ul class="menu">
           <li class="menu__elem is-active">Главная</li>
@@ -23,7 +29,7 @@
                   <span>Авторизоваться</span>
                   <img
                     class="ico-logout"
-                    src="<%= require('./assets/images/logout.svg') %>"
+                    src="<%= require('./assets/icons/logout.svg') %>"
                     alt="Иконка выхода"
                   />
                 </button>
@@ -31,7 +37,7 @@
               <li class="menu__elem_mobile">
                 <button class="burger-menu">
                   <img
-                    src="<%= require('./assets/images/burger.svg') %>"
+                    src="<%= require('./assets/icons/burger.svg') %>"
                     alt="Кнопка открытия меню"
                   />
                 </button>
@@ -45,12 +51,12 @@
         <div class="nav__mobile-wrapper_head">
           <img
             class="logo_black"
-            src="<%= require('./assets/images/logo.svg') %>assets/images/logo.svg"
+            src="<%= require('./assets/icons/logo.svg') %>"
             alt="Логотип"
           />
           <button class="close" type="button">
             <img
-              src="<%= require('./assets/images/close.svg') %>"
+              src="<%= require('./assets/icons/close.svg') %>"
               alt="Кнопка закрытия меню"
             />
           </button>
@@ -237,12 +243,18 @@
           >
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="<%= require('./assets/images/github.svg') %>" alt="Github" />
+                <img
+                  src="<%= require('./assets/icons/github.svg') %>"
+                  alt="Github"
+                />
               </a>
             </li>
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="<%= require('./assets/images/fb.svg') %>" alt="Facebook" />
+                <img
+                  src="<%= require('./assets/icons/fb.svg') %>"
+                  alt="Facebook"
+                />
               </a>
             </li>
           </ul>
