@@ -75,6 +75,11 @@ module.exports = {
       template: "./main.html",
       filename: "main.[contenthash].html",
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: "./saved-news.html",
+      filename: "saved-news.[contenthash].html",
+    }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano'),
