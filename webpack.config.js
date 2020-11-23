@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackMd5Hash = require("webpack-md5-hash");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
 const newLocal = "dist";
 const ImageWebpackLoader = require("image-webpack-loader");
 
@@ -12,10 +13,13 @@ const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
-  entry: "./index.js",
+  entry: {
+    mainPage: "./mainPage.js",
+    savedNewsPage: './savedNews.js'
+  },
   output: {
     path: path.resolve(__dirname, newLocal),
-    filename: "js/script.[hash].js",
+    filename: "js/[name].[hash].js",
   },
 
   module: {
@@ -94,7 +98,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: "./saved-news.html",
-      filename: "saved-news.[contenthash].html",
+      filename: "saved-news.html",
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,

@@ -4,17 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Explorer</title>
-    <link rel="stylesheet" type="text/css" href="<%=  htmlWebpackPlugin.files.css  %>">
-    <link rel="stylesheet" href="vendor/normalize.css" />
-    <link rel="stylesheet" href="vendor/fonts/fonts.css" />
-    <link rel="stylesheet" href="pages/saved-news.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="<%= require('./assets/images/apple-touch-icon.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="<%= require('./assets/images/favicon-32x32.png') %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="<%= require('./assets/images/favicon-16x16.png') %>"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="<%=  htmlWebpackPlugin.files.css  %>"
+    />
+    <!-- <link rel="stylesheet" href="pages/saved-news.css" /> -->
   </head>
   <body>
     <header class="header header_dark root">
       <nav class="nav">
         <img
           class="logo_black"
-          src="assets/images/svg/logo_black.svg"
+          src="<%= require('./assets/images/logo_black.svg') %>"
           alt="Логотип"
         />
         <ul class="menu">
@@ -25,7 +44,7 @@
               Жак Ив Кусто
               <img
                 class="ico-logout"
-                src="assets/images/svg/icons/logout_dark.svg"
+                src="<%= require('./assets/icons/logout_dark.svg')%>"
                 alt="Икнока выхода"
               />
             </button>
@@ -36,7 +55,7 @@
           <li class="menu__elem_mobile">
             <button class="burger-menu">
               <img
-                src="../src/assets/images/svg/icons/burger_dark.svg"
+                src="<%= require('./assets/icons/burger_dark.svg')%>"
                 alt="Кнопка открытия меню"
               />
             </button>
@@ -47,12 +66,12 @@
         <div class="nav__mobile-wrapper_head">
           <img
             class="logo_black"
-            src="assets/images/svg/logo.svg"
+            src="<%= require('./assets/images/logo.svg')%>"
             alt="Логотип"
           />
           <button class="close" type="button">
             <img
-              src="assets/images/svg/icons/close.svg"
+              src="<%= require('./assets/icons/close.svg')%>"
               alt="Кнопка закрытия меню"
             />
           </button>
@@ -95,7 +114,7 @@
         <div class="results__news">
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -114,7 +133,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png'%>"
               alt=""
               class="results__news__card_img"
             />
@@ -133,7 +152,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -152,7 +171,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -171,7 +190,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -190,7 +209,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -209,7 +228,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -228,7 +247,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="assets/images/image_08.png"
+              src="<%= require('./assets/images/image_08.png')%>"
               alt=""
               class="results__news__card_img"
             />
@@ -252,7 +271,7 @@
     <footer class="footer root">
       <div class="footer__content">
         <p class="footer__content_copy">
-          &copy; 2020 Supersite, Powered by News API
+          <!-- &copy; 2020 Supersite, Powered by News API -->
         </p>
         <nav class="footer__content__nav">
           <ul class="footer__content__nav__list">
@@ -273,17 +292,24 @@
           >
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="./assets/images/svg/icons/github.svg" alt="Github" />
+                <img
+                  src="<%= require('./assets/icons/github.svg')%>"
+                  alt="Github"
+                />
               </a>
             </li>
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img src="./assets/images/svg/icons/fb.svg" alt="Facebook" />
+                <img
+                  src="<%= require('./assets/icons/fb.svg')%>"
+                  alt="Facebook"
+                />
               </a>
             </li>
           </ul>
         </nav>
       </div>
     </footer>
+    <script src="<%=  htmlWebpackPlugin.files.js  %>"></script>
   </body>
 </html>
