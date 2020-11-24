@@ -1,7 +1,7 @@
 import Popup from './components/Popup.js'
 import MainApi from './api/MainApi.js'
 import Form from './components/Form.js'
-import ERROR_MESSAGES from './constants/Errors/ERROR_MESSAGES.js';
+import ERROR_MESSAGES from './constants/Errors/ERROR_MESSAGES.js'
 import AuthTemplate from './constants/Templates/AuthTemplate.js'
 
 (function () {
@@ -72,4 +72,4 @@ console.log(e.target);
     //   //const authValidate = new from(, ERROR_MESSAGES)
     // }
   });
-})();
+})()

@@ -7,55 +7,49 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="<%= require('./assets/images/apple-touch-icon.png') %>"
+      href="./assets/images/apple-touch-icon.png'"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="<%= require('./assets/images/favicon-32x32.png') %>"
+      href="./assets/images/favicon-32x32.png'"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="<%= require('./assets/images/favicon-16x16.png') %>"
+      href="./assets/images/favicon-16x16.png'"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="<%=  htmlWebpackPlugin.files.css  %>"
-    />
-    <!-- <link rel="stylesheet" href="pages/saved-news.css" /> -->
   </head>
   <body>
     <header class="header header_dark root">
       <nav class="nav">
         <img
           class="logo_black"
-          src="<%= require('./assets/images/logo_black.svg') %>"
+          src="./assets/images/logo-black.svg'"
           alt="Логотип"
         />
         <ul class="menu">
           <li class="menu__elem dark">Главная</li>
-          <li class="menu__elem dark is-active_dark">Сохраненные статьи</li>
+          <li class="menu__elem dark is-active_dark"><a href="./saved-news.html">Сохраненные статьи</a></li>
           <li class="menu__elem dark">
             <button class="button button__auth">
               Жак Ив Кусто
               <img
                 class="ico-logout"
-                src="<%= require('./assets/icons/logout_dark.svg')%>"
-                alt="Икнока выхода"
+                src="./assets/icons/logout-dark.svg"
+                alt="Иконка выхода"
               />
             </button>
-            <button class="button button__auth _hidden">
+            <!-- <button class="button button__auth _hidden">
               <span>Авторизоваться</span>
-            </button>
+            </button> -->
           </li>
           <li class="menu__elem_mobile">
             <button class="burger-menu">
               <img
-                src="<%= require('./assets/icons/burger_dark.svg')%>"
+                src="./assets/icons/burger_dark.svg"
                 alt="Кнопка открытия меню"
               />
             </button>
@@ -66,19 +60,19 @@
         <div class="nav__mobile-wrapper_head">
           <img
             class="logo_black"
-            src="<%= require('./assets/images/logo.svg')%>"
+            src="./assets/images/logo.svg"
             alt="Логотип"
           />
           <button class="close" type="button">
             <img
-              src="<%= require('./assets/icons/close.svg')%>"
+              src="./assets/icons/close.svg"
               alt="Кнопка закрытия меню"
             />
           </button>
         </div>
         <ul class="nav__mobile-wrapper__menu">
           <li class="nav__mobile-wrapper_menu_elem">Главная</li>
-          <li class="nav__mobile-wrapper_menu_elem">Сохраненные статьи</li>
+          <li class="nav__mobile-wrapper_menu_elem"><a href="./saved-news.html">Сохраненные статьи</a></li>
           <li class="nav__mobile-wrapper_menu_elem">
             <button class="button button__auth _hidden">
               Авторизоваться
@@ -114,7 +108,7 @@
         <div class="results__news">
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -133,7 +127,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png'%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -152,7 +146,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -171,7 +165,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -190,7 +184,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -209,7 +203,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -228,7 +222,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -247,7 +241,7 @@
           </div>
           <div class="results__news__card">
             <img
-              src="<%= require('./assets/images/image_08.png')%>"
+              src="./assets/images/image_08.png"
               alt=""
               class="results__news__card_img"
             />
@@ -293,7 +287,7 @@
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
                 <img
-                  src="<%= require('./assets/icons/github.svg')%>"
+                  src="./assets/icons/github.svg"
                   alt="Github"
                 />
               </a>
@@ -301,7 +295,7 @@
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
                 <img
-                  src="<%= require('./assets/icons/fb.svg')%>"
+                  src="./assets/icons/fb.svg"
                   alt="Facebook"
                 />
               </a>
@@ -310,6 +304,5 @@
         </nav>
       </div>
     </footer>
-    <script src="<%=  htmlWebpackPlugin.files.js  %>"></script>
   </body>
 </html>

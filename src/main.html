@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Explorer</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./assets/images/apple-touch-icon.png') %>" />
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="<%= require('./assets/images/apple-touch-icon.png') %>" />
     <link rel="icon" type="image/png" sizes="32x32" href="<%= require('./assets/images/favicon-32x32.png') %>" />
-    <link rel="icon" type="image/png" sizes="16x16" href="<%= require('./assets/images/favicon-16x16.png') %>" />
-    <link
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= require('./assets/images/favicon-16x16.png') %>" /> -->
+    <!-- <link
       rel="stylesheet"
       type="text/css"
       href="<%=  htmlWebpackPlugin.files.css  %>"
-    />
+    /> -->
   </head>
   <body>
     <header class="header root">
@@ -20,8 +20,8 @@
           <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип" />
         </a>
         <ul class="menu">
-          <li class="menu__elem is-active">Главная</li>
-          <li class="menu__elem">Сохраненные статьи</li>
+          <li class="menu__elem is-active"><a class="menu__elem_link" href="/">Главная</a></li>
+          <li class="menu__elem"><a class="menu__elem_link" href="./saved-news.html">Сохраненные статьи</a></li>
           <li class="menu__elem menu__elem_btn">
             <ul class="menu">
               <li class="menu__elem">
@@ -63,7 +63,7 @@
         </div>
         <ul class="nav__mobile-wrapper__menu">
           <li class="nav__mobile-wrapper_menu_elem">Главная</li>
-          <li class="nav__mobile-wrapper_menu_elem">Сохраненные статьи</li>
+          <li class="nav__mobile-wrapper_menu_elem"><a href="./saved-news.html">Сохраненные статьи</a></li>
           <li class="nav__mobile-wrapper_menu_elem">
             <button class="button button__auth _hidden">
               Авторизоваться
@@ -222,7 +222,7 @@
     <footer class="footer root">
       <div class="footer__content">
         <p class="footer__content_copy">
-          &copy; 2020 Supersite, Powered by News API
+          <!-- &copy; 2020 Supersite, Powered by News API -->
         </p>
         <nav class="footer__content__nav">
           <ul class="footer__content__nav__list">
@@ -262,7 +262,7 @@
       </div>
     </footer>
 
-    <script src="<%=  htmlWebpackPlugin.files.js  %>"></script>
+    <!-- <script src="<%=  htmlWebpackPlugin.files.js  %>"></script> -->
     <!-- <script type="module" src="./js/script.js"></script> -->
   </body>
 </html>

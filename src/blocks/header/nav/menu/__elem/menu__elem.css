@@ -16,6 +16,10 @@
   margin: 0;
 }
 
+.menu__elem_link {
+  color: white;
+}
+
 .is-active {
   border-bottom: 3px solid #fff;
 }

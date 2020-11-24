@@ -13,13 +13,13 @@ const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
-  entry: {
-    mainPage: "./mainPage.js",
-    savedNewsPage: './savedNews.js'
-  },
+  entry: [
+    './pages/mainPage.js',
+    './pages/savedNews.js'
+  ],
   output: {
     path: path.resolve(__dirname, newLocal),
-    filename: "js/[name].[hash].js",
+    filename: "./js/[name].[hash].js",
   },
 
   module: {
@@ -83,22 +83,34 @@ module.exports = {
           },
         ],
       },
+      // {
+      //   test: /\.html$/i,
+      //   loader: 'html-loader',
+      //   options: {
+      //     attributes: false,
+      //   },
+      // },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "styles.[contenthash].css",
+      filename: "./[name].[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       template: "./main.html",
       filename: "main.html",
-      // favicon: "./assets/images"
+      // chunks: ['main'],
+      // css: './pages/saved-news.css',
+      // favicon: "./assets/images/favicon.ico"
     }),
     new HtmlWebpackPlugin({
-      inject: false,
+      inject: true,
       template: "./saved-news.html",
       filename: "saved-news.html",
+      // chunks: ['saved'],
+      // css: './pages/saved-news.css',
+      // favicon: "./assets/images/favicon.ico"
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
