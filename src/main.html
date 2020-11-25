@@ -16,12 +16,18 @@
   <body>
     <header class="header root">
       <nav class="nav">
-        <a href="#">
+        <a href="/">
           <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип" />
         </a>
         <ul class="menu">
-          <li class="menu__elem is-active"><a class="menu__elem_link" href="/">Главная</a></li>
-          <li class="menu__elem"><a class="menu__elem_link" href="./saved-news.html">Сохраненные статьи</a></li>
+          <li class="menu__elem is-active">
+            <a class="menu__elem_link" href="/">Главная</a>
+          </li>
+          <li class="menu__elem">
+            <a class="menu__elem_link" href="./saved-news.html"
+              >Сохраненные статьи</a
+            >
+          </li>
           <li class="menu__elem menu__elem_btn">
             <ul class="menu">
               <li class="menu__elem">
@@ -63,7 +69,9 @@
         </div>
         <ul class="nav__mobile-wrapper__menu">
           <li class="nav__mobile-wrapper_menu_elem">Главная</li>
-          <li class="nav__mobile-wrapper_menu_elem"><a href="./saved-news.html">Сохраненные статьи</a></li>
+          <li class="nav__mobile-wrapper_menu_elem">
+            <a href="./saved-news.html">Сохраненные статьи</a>
+          </li>
           <li class="nav__mobile-wrapper_menu_elem">
             <button class="button button__auth _hidden">
               Авторизоваться
