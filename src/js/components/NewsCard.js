@@ -10,7 +10,7 @@ export default class NewsCard {
       <article class="results__news__card">
         <img
           src="${card.img}"
-          alt=""
+          alt="Превью карточки"
           class="results__news__card_img"
         />
         <div class="results__news__card__content">

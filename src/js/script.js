@@ -25,13 +25,13 @@ import AuthTemplate from './constants/Templates/AuthTemplate.js'
   const mainApiUrl = 'https://api.gz-news-explorer.students.nomoreparties.co/';
   const newsApiUrl = '';
 
-  const mainApi = new MainApi({
-    baseUrl: '',
-    headers: {
-      authorization: tokenMainApi, // 59deab8e-005f-42bb-a977-41ac03302afc token from Mesto project
-      'content-type': 'application/json'
-    }
-  });
+  // const mainApi = new MainApi({
+  //   baseUrl: mainApiUrl,
+  //   headers: {
+  //     authorization: tokenMainApi, // 59deab8e-005f-42bb-a977-41ac03302afc token from Mesto project
+  //     'content-type': 'application/json'
+  //   }
+  // });
 
   Promise.all([
     mainApi.makeFetch(),
@@ -50,7 +50,6 @@ import AuthTemplate from './constants/Templates/AuthTemplate.js'
 
   btnSignin.forEach(btn => {
     btn.addEventListener("click", (e) => {
-      console.log(e.target.closest('.nav__mobile-wrapper_menu_elem'));
       if (e.target.closest('.nav__mobile-wrapper_menu_elem')) {
         mobileNav.classList.add('hidden');
         newPopup.open();

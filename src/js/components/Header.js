@@ -1,7 +1,7 @@
 export default class Header {
   constructor(props) {
     this.props = props;
-    this.loggedTemplate = [
+    this.loggedData = [
       {
         elem: 'Главная',
         link: '/',
