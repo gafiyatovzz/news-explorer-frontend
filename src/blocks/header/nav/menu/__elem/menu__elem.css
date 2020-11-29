@@ -1,4 +1,5 @@
-.menu__elem {
+.menu__elem,
+.menu__elem_dark {
   margin-right: 32px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
@@ -8,8 +9,11 @@
   line-height: 24px;
   letter-spacing: 0px;
   text-align: center;
-  padding: 26px 0 23px;
   border-bottom: 3px solid transparent;
+}
+
+.menu__elem_dark {
+  color: black;
 }
 
 .menu__elem:last-of-type {
@@ -38,7 +42,8 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .menu__elem {
+  .menu__elem,
+  .menu__elem_dark {
     font-size: 16px;
     margin-right: 16px;
   }
@@ -46,7 +51,8 @@
 
 
 @media only screen and (max-width: 768px) {
-  .menu__elem {
+  .menu__elem,
+  .menu__elem_dark {
     display: none;
   }
 }

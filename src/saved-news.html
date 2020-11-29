@@ -23,67 +23,74 @@
     />
   </head>
   <body>
-    <header class="header header_dark root">
+    <header class="header_dark root">
       <nav class="nav">
-        <a href="/">
-          <img
-          class="logo_black"
-          src="./assets/images/logo-black.svg'"
-          alt="Логотип"
-        />
+        <a href="#">
+          <img src="<%= require('./assets/icons/logo-black.svg') %>" alt="Логотип" />
         </a>
-        <ul class="menu">
-          <li class="menu__elem dark"><a href="/">Главная</a></li>
-          <li class="menu__elem dark is-active_dark"><a href="./saved-news.html">Сохраненные статьи</a></li>
-          <li class="menu__elem dark">
-            <button class="button button__auth">
-              Жак Ив Кусто
-              <img
-                class="ico-logout"
-                src="./assets/icons/logout-dark.svg"
-                alt="Иконка выхода"
-              />
-            </button>
-            <!-- <button class="button button__auth _hidden">
-              <span>Авторизоваться</span>
-            </button> -->
-          </li>
-          <li class="menu__elem_mobile">
-            <button class="burger-menu">
-              <img
-                src="./assets/icons/burger_dark.svg"
-                alt="Кнопка открытия меню"
-              />
-            </button>
-          </li>
-        </ul>
+        <div class="nav__container">
+          <ul class="menu">
+            <li class="menu__elem_dark">
+              <a class="menu__elem_link" href="#">Главная</a>
+            </li>
+            <li class="menu__elem_dark is-active">
+              <a class="menu__elem_link" href="./saved-news.html"
+                >Сохраненные статьи</a
+              >
+            </li>
+            <li class="menu__elem_dark">
+              <button class="button button__auth_dark">
+                <span>Авторизоваться</span>
+                <img
+                  class="ico-logout"
+                  src="<%= require('./assets/icons/logout-dark.svg') %>"
+                  alt="Иконка выхода"
+                />
+              </button>
+            </li>
+          </ul>
+          <ul class="menu menu-mobile">
+            <li class="menu__elem_mobile">
+              <button class="burger-menu">
+                <img
+                  src="<%= require('./assets/icons/burger-dark.svg') %>"
+                  alt="Кнопка открытия меню"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
       </nav>
-      <nav class="nav__mobile-wrapper">
+      <!-- DROPDOWN MOBILE MENU -->
+      <nav class="nav__mobile-wrapper hidden">
         <div class="nav__mobile-wrapper_head">
-          <img
-            class="logo_black"
-            src="./assets/images/logo.svg"
-            alt="Логотип"
-          />
+          <a href="#">
+            <img
+              src="<%= require('./assets/icons/logo.svg') %>"
+              alt="Логотип"
+            />
+          </a>
           <button class="close" type="button">
             <img
-              src="./assets/icons/close.svg"
+              src="<%= require('./assets/icons/close.svg') %>"
               alt="Кнопка закрытия меню"
             />
           </button>
         </div>
         <ul class="nav__mobile-wrapper__menu">
           <li class="nav__mobile-wrapper_menu_elem">Главная</li>
-          <li class="nav__mobile-wrapper_menu_elem"><a href="./saved-news.html">Сохраненные статьи</a></li>
           <li class="nav__mobile-wrapper_menu_elem">
-            <button class="button button__auth _hidden">
+            <a href="./saved-news.html">Сохраненные статьи</a>
+          </li>
+          <li class="nav__mobile-wrapper_menu_elem">
+            <button class="button button__auth hidden">
               Авторизоваться
               <i></i>
             </button>
-            <button class="button">
+            <!-- <button class="button">
               Жак Ив Кусто
               <i></i>
-            </button>
+            </button> -->
           </li>
         </ul>
       </nav>
@@ -111,7 +118,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -130,7 +137,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -149,7 +156,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -168,7 +175,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -187,7 +194,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -206,7 +213,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -225,7 +232,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -244,7 +251,7 @@
           <div class="results__news__card">
             <img
               src="./assets/images/image_08.png"
-              alt=""
+              alt="Превью новости"
               class="results__news__card_img"
             />
             <div class="results__news__card__content">
@@ -262,12 +269,40 @@
           </div>
         </div>
       </section>
+
+      <div class="popup">
+        <div class="popup__wrapper"></div>
+        <div class="popup__content">
+          <div class="popup__close">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M22.3566 20L31.1781 28.8215L28.8211 31.1786L18.3497 20.7072C17.9592 20.3166 17.9592 19.6835 18.3497 19.2929L28.8211 8.82153L31.1781 11.1786L22.3566 20Z"
+                fill="white"
+              />
+              <path
+                d="M18.1307 20L9.30919 28.8215L11.6662 31.1786L22.1376 20.7072C22.5281 20.3166 22.5281 19.6835 22.1376 19.2929L11.6662 8.82153L9.30919 11.1786L18.1307 20Z"
+                fill="white"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="popup popup__sucess">
+        <div class="popup__wrapper"></div>
+      </div>
     </main>
 
     <footer class="footer root">
       <div class="footer__content">
         <p class="footer__content_copy">
-          <!-- &copy; 2020 Supersite, Powered by News API -->
+          &copy; 2020 Supersite, Powered by News API
         </p>
         <nav class="footer__content__nav">
           <ul class="footer__content__nav__list">
@@ -288,18 +323,12 @@
           >
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img
-                  src="./assets/icons/github.svg"
-                  alt="Github"
-                />
+                <img src="./assets/icons/github.svg" alt="Github" />
               </a>
             </li>
             <li class="footer__content__nav__list_elem">
               <a class="footer__content__nav_link" href="#">
-                <img
-                  src="./assets/icons/fb.svg"
-                  alt="Facebook"
-                />
+                <img src="./assets/icons/fb.svg" alt="Facebook" />
               </a>
             </li>
           </ul>

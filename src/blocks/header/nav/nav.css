@@ -7,6 +7,11 @@
   background: rgba(196, 196, 196, 0.01)
 }
 
+.nav__container {
+  display: flex;
+  height: inherit;
+}
+
 @media only screen and (max-width: 1024px) {
   .nav {
     height: 66px;

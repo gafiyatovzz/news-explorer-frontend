@@ -16,50 +16,48 @@
   <body>
     <header class="header root">
       <nav class="nav">
-        <a href="/">
+        <a href="#">
           <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип" />
         </a>
-        <ul class="menu">
-          <li class="menu__elem is-active">
-            <a class="menu__elem_link" href="/">Главная</a>
-          </li>
-          <li class="menu__elem">
-            <a class="menu__elem_link" href="./saved-news.html"
-              >Сохраненные статьи</a
-            >
-          </li>
-          <li class="menu__elem menu__elem_btn">
-            <ul class="menu">
-              <li class="menu__elem">
-                <button class="button button__auth">
-                  <span>Авторизоваться</span>
-                  <img
-                    class="ico-logout"
-                    src="<%= require('./assets/icons/logout.svg') %>"
-                    alt="Иконка выхода"
-                  />
-                </button>
-              </li>
-              <li class="menu__elem_mobile">
-                <button class="burger-menu">
-                  <img
-                    src="<%= require('./assets/icons/burger.svg') %>"
-                    alt="Кнопка открытия меню"
-                  />
-                </button>
-              </li>
-            </ul>
-          </li>
-        </ul>
+        <div class="nav__container">
+          <ul class="menu">
+            <li class="menu__elem is-active">
+              <a class="menu__elem_link" href="#">Главная</a>
+            </li>
+            <li class="menu__elem">
+              <a class="menu__elem_link" href="./saved-news.html"
+                >Сохраненные статьи</a
+              >
+            </li>
+          </ul>
+          <ul class="menu menu-mobile">
+            <li class="menu__elem">
+              <button class="button button__auth">
+                <span>Авторизоваться</span>
+                <img
+                  class="ico-logout"
+                  src="<%= require('./assets/icons/logout.svg') %>"
+                  alt="Иконка выхода"
+                />
+              </button>
+            </li>
+            <li class="menu__elem_mobile">
+              <button class="burger-menu">
+                <img
+                  src="<%= require('./assets/icons/burger.svg') %>"
+                  alt="Кнопка открытия меню"
+                />
+              </button>
+            </li>
+          </ul>
+        </div>
       </nav>
       <!-- DROPDOWN MOBILE MENU -->
-      <nav class="nav__mobile-wrapper">
+      <nav class="nav__mobile-wrapper hidden">
         <div class="nav__mobile-wrapper_head">
-          <img
-            class="logo_black"
-            src="<%= require('./assets/icons/logo.svg') %>"
-            alt="Логотип"
-          />
+          <a href="#">
+            <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип">
+          </a>
           <button class="close" type="button">
             <img
               src="<%= require('./assets/icons/close.svg') %>"
@@ -73,7 +71,7 @@
             <a href="./saved-news.html">Сохраненные статьи</a>
           </li>
           <li class="nav__mobile-wrapper_menu_elem">
-            <button class="button button__auth _hidden">
+            <button class="button button__auth hidden">
               Авторизоваться
               <i></i>
             </button>
@@ -230,7 +228,7 @@
     <footer class="footer root">
       <div class="footer__content">
         <p class="footer__content_copy">
-          <!-- &copy; 2020 Supersite, Powered by News API -->
+          &copy; 2020 Supersite, Powered by News API
         </p>
         <nav class="footer__content__nav">
           <ul class="footer__content__nav__list">
@@ -270,7 +268,5 @@
       </div>
     </footer>
 
-    <!-- <script src="<%=  htmlWebpackPlugin.files.js  %>"></script> -->
-    <!-- <script type="module" src="./js/script.js"></script> -->
   </body>
 </html>

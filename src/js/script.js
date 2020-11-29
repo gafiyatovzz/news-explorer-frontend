@@ -5,7 +5,11 @@ import ERROR_MESSAGES from './constants/Errors/ERROR_MESSAGES.js'
 import AuthTemplate from './constants/Templates/AuthTemplate.js'
 
 (function () {
-  const btnSignin = document.querySelector(".button__auth");
+  const btnSignin = document.querySelectorAll(".button__auth");
+  const burgerMenu = document.querySelector('.burger-menu');
+  const mobileNav = document.querySelector('.nav__mobile-wrapper');
+  const mobileNavHead = document.querySelector('.nav__mobile-wrapper_head');
+  const navClose = mobileNavHead.querySelector('.close');
 
   /* ******** POPUP SIGNIN INIT ******** */
   const popup = document.querySelector(".popup");
@@ -35,41 +39,33 @@ import AuthTemplate from './constants/Templates/AuthTemplate.js'
 
   const newPopup = new Popup(popup);
 
-  btnSignin.addEventListener("click", () => {
-    newPopup.open();
-    const form = popup.querySelector('form');
-    const formValidation = new Form(form, ERROR_MESSAGES)
+  burgerMenu.addEventListener('click', () => {
+    const btnSign = document.querySelector(".button__auth");
 
-    formValidation._validateForm();
+    mobileNav.classList.remove('hidden');
 
-    popup.querySelector('form').addEventListener('submit', (e) => {
-console.log(e.target);
+    btnSign.addEventListener('click', () => newPopup.open())
+    navClose.addEventListener('click', () => mobileNav.classList.add('hidden'))
+  })
 
-      const inputSignEmail = popup.querySelector(".popup__input-email");
-      const inputSignPassword = popup.querySelector(".popup__input-password");
+  btnSignin.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      console.log(e.target.closest('.nav__mobile-wrapper_menu_elem'));
+      if (e.target.closest('.nav__mobile-wrapper_menu_elem')) {
+        mobileNav.classList.add('hidden');
+        newPopup.open();
+        const form = popup.querySelector('form');
+        const formValidation = new Form(form, ERROR_MESSAGES)
 
+        formValidation._validateForm();
+      } else {
+        newPopup.open();
+        const form = popup.querySelector('form');
+        const formValidation = new Form(form, ERROR_MESSAGES)
 
-    })
-    // if (popup.classList.contains('.popup__signin')) {
-    //   const signinForm = document.querySelector('.popup__signin > form[name="signin"]');
-    //   const popupBtn = document.querySelector('.popup__button');
+        formValidation._validateForm();
+      }
 
-    //   signinForm.addEventListener('submit', (e) => {
-    //     e.preventDefault();
-
-    //     popupBtn.addEventListener('click', (e) => {
-    //       const data = {
-    //         email: signinForm.email.value,
-    //         password: signinForm.password.value,
-    //       };
-
-    //       mainApi.signin(data);
-    //     })
-    //   })
-    // } else if (popup.classList.contains('.popup__signup')) {
-    //   //btnSignLink.addEventListener("click", () => {
-    //   const authPopup = document.querySelector("");
-    //   //const authValidate = new from(, ERROR_MESSAGES)
-    // }
+    });
   });
 })()

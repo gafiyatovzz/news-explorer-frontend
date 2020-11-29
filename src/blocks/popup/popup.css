@@ -8,6 +8,7 @@
   justify-content: center;
   display: none;
   overflow-y: hidden;
+  z-index: 999;
 }
 
 ._is-opened {
@@ -22,5 +23,4 @@
   width: 100vw;
   height: 100vh;
   background-color: rgba(0,0,0,.5);
-  z-index: 1;
 }

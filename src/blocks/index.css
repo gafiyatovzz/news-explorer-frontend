@@ -26,11 +26,15 @@ a:focus {
   outline: none;
 }
 
+a:visited {
+  color: inherit;
+}
+
 p {
   padding: 0;
 }
 
-._hidden {
+.hidden {
   display: none;
 }
 

@@ -1,3 +1,11 @@
+.banner__content__form_input {
+  border: 2px solid rgba(47,113, 229,0);
+}
+
+.banner__content__form_input:focus {
+  border-color: rgba(47,113, 229,1);
+}
+
 @media only screen and (max-width: 480px) {
   .banner__content__form_input {
     margin-bottom: 16px;

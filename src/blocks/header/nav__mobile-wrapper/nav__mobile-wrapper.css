@@ -5,7 +5,6 @@
   left: 0;
   top: 0;
   height: 100vh;
-  display: none;
 }
 
 ._dark {
@@ -15,15 +14,9 @@
 .nav__mobile-wrapper_head {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 56px;
   background: #1A1B22;
   padding: 0 16px;
   box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
-}
-
-
-@media only screen and (max-width: 767px) {
-  .nav__mobile-wrapper {
-    display: block;
-  }
 }
