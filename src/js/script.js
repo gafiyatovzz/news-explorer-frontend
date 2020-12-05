@@ -3,9 +3,10 @@ import MainApi from './api/MainApi.js'
 import Form from './components/Form.js'
 import ERROR_MESSAGES from './constants/Errors/ERROR_MESSAGES.js'
 import AuthTemplate from './constants/Templates/AuthTemplate.js'
+import SigninTemplate from './constants/Templates/SigninTemplate.js'
 
 (function () {
-  const btnSignin = document.querySelectorAll(".button__auth");
+  const btnSignin = document.querySelector(".button__auth");
   const burgerMenu = document.querySelector('.burger-menu');
   const mobileNav = document.querySelector('.nav__mobile-wrapper');
   const mobileNavHead = document.querySelector('.nav__mobile-wrapper_head');
@@ -14,6 +15,7 @@ import AuthTemplate from './constants/Templates/AuthTemplate.js'
   /* ******** POPUP SIGNIN INIT ******** */
   const popup = document.querySelector(".popup");
   const btnSignLink = popup.querySelector(".popup__sign_link");
+  const popupWrapper = popup.querySelector('.popup__wrapper');
   const errorSignName = popup.querySelector(".popup__input-email ~ span");
   const errorSignPassword = popup.querySelector(
     ".popup__input-password ~ span"
@@ -33,38 +35,90 @@ import AuthTemplate from './constants/Templates/AuthTemplate.js'
   //   }
   // });
 
-  Promise.all([
-    mainApi.makeFetch(),
-  ])
+  // Promise.all([
+  //   mainApi.makeFetch(),
+  // ])
 
-  const newPopup = new Popup(popup);
+  const newPopup = new Popup(popup, SigninTemplate);
 
-  burgerMenu.addEventListener('click', () => {
-    const btnSign = document.querySelector(".button__auth");
+  btnSignin.addEventListener('click', (e) => {
+    newPopup.open();
+    const form = popup.querySelector('form');
+    const contentPopup = document.querySelector('.popup__content')
+    new Form(form, ERROR_MESSAGES)
 
-    mobileNav.classList.remove('hidden');
+    contentPopup.addEventListener('click', (e) => {
+      if (e.target.classList.contains('popup__auth_link')) {
+        const authPopup = new Popup(popup, AuthTemplate)
+        authPopup.open();
+        const form = popup.querySelector('form');
+        new Form(form, ERROR_MESSAGES)
+      }
+      if (e.target.classList.contains('popup__sign_link')) {
+        newPopup.open();
 
-    btnSign.addEventListener('click', () => newPopup.open())
-    navClose.addEventListener('click', () => mobileNav.classList.add('hidden'))
+        const form = popup.querySelector('form');
+        new Form(form, ERROR_MESSAGES)
+      }
+      if (e.target.closest('.popup__close')) {
+        newPopup.close();
+      }
+    })
   })
 
-  btnSignin.forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      if (e.target.closest('.nav__mobile-wrapper_menu_elem')) {
-        mobileNav.classList.add('hidden');
-        newPopup.open();
-        const form = popup.querySelector('form');
-        const formValidation = new Form(form, ERROR_MESSAGES)
+  popupWrapper.addEventListener('click', newPopup.close());
 
-        formValidation._validateForm();
-      } else {
-        newPopup.open();
-        const form = popup.querySelector('form');
-        const formValidation = new Form(form, ERROR_MESSAGES)
+  burgerMenu.addEventListener('click', () => {
+    const navMobileWrapper = document.querySelector('.nav__mobile-wrapper')
+    const btnSign = navMobileWrapper.querySelector(".button__auth");
+    mobileNav.classList.remove('hidden');
 
-        formValidation._validateForm();
-      }
+    btnSign.addEventListener('click', (e) => {
+      newPopup.open();
+      const form = popup.querySelector('form');
+      const contentPopup = document.querySelector('.popup__content')
+      new Form(form, ERROR_MESSAGES)
 
-    });
+      contentPopup.addEventListener('click', (e) => {
+        if (e.target.classList.contains('popup__auth_link')) {
+          const authPopup = new Popup(popup, AuthTemplate)
+          authPopup.open();
+          const form = popup.querySelector('form');
+          new Form(form, ERROR_MESSAGES)
+        }
+        if (e.target.classList.contains('popup__sign_link')) {
+          newPopup.open();
+
+          const form = popup.querySelector('form');
+          new Form(form, ERROR_MESSAGES)
+        }
+        if (e.target.closest('.popup__close')) {
+          newPopup.close();
+        }
+      })
+
+      navClose.addEventListener('click', () => mobileNav.classList.add('hidden'))
+    })
   });
+
+
+  // btnSignin.forEach(btn => {
+  //   btn.addEventListener("click", (e) => {
+  //     if (e.target.closest('.nav__mobile-wrapper_menu_elem')) {
+  //       mobileNav.classList.add('hidden');
+  //       newPopup.open();
+  //       const form = popup.querySelector('form');
+  //       const formValidation = new Form(form, ERROR_MESSAGES)
+
+  //       formValidation._validateForm();
+  //     } else {
+  //       newPopup.open();
+  //       const form = popup.querySelector('form');
+  //       const formValidation = new Form(form, ERROR_MESSAGES)
+
+  //       formValidation._validateForm();
+  //     }
+
+  //   });
+  // });
 })()

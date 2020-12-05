@@ -2,7 +2,7 @@ export default class Form {
   constructor(form, message) {
     this.inputs = form.querySelectorAll('input');
     this.message = message;
-    //this._validateForm();
+    this._validateForm();
   }
 
   setServerError() {

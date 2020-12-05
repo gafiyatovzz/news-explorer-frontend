@@ -1,14 +1,16 @@
 export default class MainApi {
   constructor(baseUrl, header) {
     this.baseUrl = baseUrl;
-    this.header = header;
+    this.header = {
+      'content-type': 'application/json'
+    };
   }
 
   makeFetch(url, method = 'GET', body = undefined) {
     body ? JSON.stringify(body) :
       fetch(`${this.baseUrl}/${url}`, {
         method,
-        headers: this.header,
+        headers: this.header.authorization = token,
         body
       })
         .then(res => res.json())
@@ -27,7 +29,7 @@ export default class MainApi {
   }
 
   signin(email, password) {
-    return this.makeFetch('/signin', 'POST', userData)
+    return this.makeFetch('/signin', 'POST', { email, password })
   } //аутентифицирует пользователя на основе почты и пароля;
 
   getUserData() {
