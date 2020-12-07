@@ -2,8 +2,6 @@ const SigninTemplate = `
 <h2 class="popup__title">Вход</h2>
           <form
             class="form popup__form"
-            action="http://httpbin.org/post"
-            method="POST"
             name="signup"
             novalidate
           >
@@ -14,6 +12,7 @@ const SigninTemplate = `
                 class="popup__form_input"
                 id="email"
                 placeholder="Введите email"
+                required
               />
               <span id="error-email" class="error-message"></span>
             </div>
@@ -26,10 +25,11 @@ const SigninTemplate = `
                 placeholder="Введите пароль"
                 minlength="2"
                 maxlength="30"
+                required
               />
               <span id="error-password" class="error-message"></span>
             </div>
-            <button type="submit" class="button popup__button" disabled>Войти</button>
+            <button type="submit" class="button popup__button _disabled" disabled>Войти</button>
           </form>
           <p class="popup__sign">
             или <a class="popup__auth_link" href="#">Зарегистрироваться</a>

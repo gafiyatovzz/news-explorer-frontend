@@ -1,36 +1,54 @@
+import MainApi from "../api/MainApi";
+
 export default class Form {
   constructor(form, message) {
-    this.inputs = form.querySelectorAll('input');
+    this.form = form;
     this.message = message;
+    this.inputs = [...this.form.querySelectorAll("input")];
+    this.button = this.form.querySelector(".popup__button");
+    this.data = {};
     this._validateForm();
+
+    // this._setSubmitButtonState();
   }
 
   setServerError() {
-
+    this._getInfo()
   } // добавляет форме ошибку, пришедшую с сервера;
 
   _validateInputElement(input, error) {
-    for (let key in this.message) {
-      if (input.validity[key]) return error.textContent = this.message[key]
-    } return error.textContent = '';
-  } //валидирует переданный в качестве аргумента инпут;
+    for (const key in this.message) {
+      input.validity[key] ? (error.textContent = this.message[key]) : error.textContent = "";
+    }
+    return error.textContent;
+  }
 
   _validateForm() {
-    this.inputs.forEach(element => {
-      element.addEventListener('input', (e) => {
-        this._validateInputElement(e.target, e.target.closest('div').querySelector('.error-message'));
-      })
+    this.form.addEventListener("input", (e) => {
+      this._validateInputElement(
+        e.target,
+        e.target.closest("div").querySelector(".error-message")
+      );
+      this.button.disabled = !this.form.checkValidity();
+      this._writeUserData(e);
     });
-
-  } //валидирует всю форму;
+  }
 
   _clear() {
-    this.inputs.forEach(input => {
-      input.value = ''
-    })
+    this.inputs.forEach((input) => {
+      input.value = "";
+    });
   } //вспомогательный метод, очищает поля формы;
 
-  _getInfo() {
+  _writeUserData(event) {
+    this.inputs.forEach((input) => {
+      if (event.target.id === input.id){
+        this.data[input.getAttribute("id")] = event.target.value
+      }
+    });
+  }
 
-  } //вспомогательный метод, возвращает данные формы.
+  _getInfo() {
+    return this.data;
+  }
 }

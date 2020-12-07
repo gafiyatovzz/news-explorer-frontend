@@ -2,23 +2,22 @@ const AuthTemplate = `
     <h2 class="popup__title">Регистрация</h2>
     <form
       class="form popup__form"
-      action="http://httpbin.org/post"
-      method="POST"
+      type="submit"
       name="signup"
       novalidate
     >
     <div class="input__container">
-        <label for="username" class="popup__form_label">Имя</label>
+        <label for="name" class="popup__form_label">Имя</label>
         <input
           type="text"
           class="popup__form_input"
-          id="username"
+          id="name"
           minlength="2"
           maxlength="30"
           placeholder="Введите своё имя"
           required
         />
-        <span id="error-username" class="error-message"></span>
+        <span id="error-name" class="error-message"></span>
       </div>
       <div class="input__container">
         <label for="email" class="popup__form_label">Email</label>
@@ -44,7 +43,7 @@ const AuthTemplate = `
         />
         <span id="error-password" class="error-message"></span>
       </div>
-      <button type="submit" class="button popup__button" disabled>
+      <button type="submit" class="button popup__button _disabled" disabled>
         Зарегистрироваться
       </button>
     </form>
