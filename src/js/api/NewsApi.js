@@ -1,10 +1,10 @@
 export default class NewsApi {
-  constructor(option, fetch) {
+  constructor(option) {
     this.fetch = fetch;
     this.option = option;
   }
 
   getNews() {
-    this.fetch.makeFetch('url news', 'GET', this.option);
+    this.fetch('url news', 'GET', this.option);
   } //возвращает список новостей на основе запроса.
 }

@@ -16,11 +16,11 @@
             <li class="menu__elem is-active">
               <a class="menu__elem_link" href="#">Главная</a>
             </li>
-            <li class="menu__elem">
+            <!-- <li class="menu__elem">
               <a class="menu__elem_link" href="./saved-news.html"
                 >Сохраненные статьи</a
               >
-            </li>
+            </li> -->
           </ul>
           <ul class="menu menu-mobile">
             <li class="menu__elem">
@@ -57,20 +57,21 @@
             />
           </button>
         </div>
-        <ul class="nav__mobile-wrapper__menu">
+        <ul class="menu nav__mobile-wrapper__menu">
           <li class="nav__mobile-wrapper_menu_elem">Главная</li>
-          <li class="nav__mobile-wrapper_menu_elem">
-            <a href="./saved-news.html">Сохраненные статьи</a>
-          </li>
+          <!-- <li class="nav__mobile-wrapper_menu_elem">
+            <a class="menu__elem_link" href="./saved-news.html">Сохраненные статьи</a>
+          </li> -->
           <li class="nav__mobile-wrapper_menu_elem">
             <button class="button button__auth hidden">
-              Авторизоваться
-              <i></i>
+              <span>Авторизоваться</span>
+              <img
+                  class="ico-logout"
+                  src="<%= require('./assets/icons/logout.svg') %>"
+                  alt="Иконка выхода"
+                />
             </button>
-            <!-- <button class="button">
-              Жак Ив Кусто
-              <i></i>
-            </button> -->
+
           </li>
         </ul>
       </nav>

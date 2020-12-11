@@ -8,12 +8,11 @@ export default class Form {
     this.button = this.form.querySelector(".popup__button");
     this.data = {};
     this._validateForm();
-
-    // this._setSubmitButtonState();
   }
 
   setServerError() {
     this._getInfo()
+    this._clear();
   } // добавляет форме ошибку, пришедшую с сервера;
 
   _validateInputElement(input, error) {

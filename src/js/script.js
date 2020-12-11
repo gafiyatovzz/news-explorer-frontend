@@ -4,22 +4,17 @@ import Form from "./components/Form.js";
 import ERROR_MESSAGES from "./constants/Errors/ERROR_MESSAGES.js";
 import AuthTemplate from "./constants/Templates/AuthTemplate.js";
 import SigninTemplate from "./constants/Templates/SigninTemplate.js";
+import Header from "./components/Header.js";
 
 (function () {
   const btnSignin = document.querySelector(".button__auth");
   const burgerMenu = document.querySelector(".burger-menu");
   const mobileNav = document.querySelector(".nav__mobile-wrapper");
   const mobileNavHead = document.querySelector(".nav__mobile-wrapper_head");
-  const navClose = mobileNavHead.querySelector(".close");
 
   /* ******** POPUP SIGNIN INIT ******** */
   const popup = document.querySelector(".popup");
-  const btnSignLink = popup.querySelector(".popup__sign_link");
   const popupWrapper = popup.querySelector(".popup__wrapper");
-  const errorSignName = popup.querySelector(".popup__input-email ~ span");
-  const errorSignPassword = popup.querySelector(
-    ".popup__input-password ~ span"
-  );
 
   const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
   const newsApiUrl = "";
@@ -29,6 +24,11 @@ import SigninTemplate from "./constants/Templates/SigninTemplate.js";
   // Promise.all([
   //   mainApi.makeFetch(),
   // ])
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  const header = new Header(user);
+  header.isLogged();
+  header.render();
 
   const newPopup = new Popup(popup, SigninTemplate);
 
@@ -43,8 +43,11 @@ import SigninTemplate from "./constants/Templates/SigninTemplate.js";
 
     formSignin.addEventListener("submit", (e) => {
       btnSignin.addEventListener("click", () => {
-        console.log('signin: ', f._getInfo());
         mainApi.signin(f._getInfo());
+        newPopup.close();
+        const user = JSON.parse(localStorage.getItem("user"));
+        const header = new Header(user);
+        header.isLogged();
       });
     });
 
@@ -58,8 +61,9 @@ import SigninTemplate from "./constants/Templates/SigninTemplate.js";
         const formSignup = new Form(formAuth, ERROR_MESSAGES);
 
         formAuth.addEventListener("submit", (e) => {
-         btnAuth.addEventListener("click", () => {
+          btnAuth.addEventListener("click", () => {
             mainApi.signup(formSignup._getInfo());
+            authPopup.close();
           });
         });
       }
@@ -74,6 +78,7 @@ import SigninTemplate from "./constants/Templates/SigninTemplate.js";
       }
     });
   });
+
 
   popupWrapper.addEventListener("click", newPopup.close());
 
@@ -105,10 +110,9 @@ import SigninTemplate from "./constants/Templates/SigninTemplate.js";
           newPopup.close();
         }
       });
-
-      navClose.addEventListener("click", () =>
-        mobileNav.classList.add("hidden")
-      );
+    });
+    mobileNav.addEventListener("click", () => {
+      navMobileWrapper.classList.add("hidden");
     });
   });
 

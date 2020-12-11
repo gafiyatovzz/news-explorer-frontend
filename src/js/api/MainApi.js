@@ -9,28 +9,6 @@ export default class MainApi {
     console.log("base ", this.baseUrl);
   }
 
-  makeFetch(url, method = "GET", body = undefined) {
-    localStorage.setItem("errors", body);
-    // body
-    // // ? (body = JSON.stringify(body))
-    // :
-   fetch(`${this.baseUrl}${url}`, {
-          method,
-          headers: {
-            "content-type": "application/json",
-          },
-          body,
-        })
-          .then((res) => res.json())
-          .then((data) => localStorage.setItem("token", JSON.stringify(data)))
-          .catch((e) => {
-            console.log("Message Error: ", {
-              message: e.message,
-              statuseCode: e.statuseCode,
-            });
-          });
-  }
-
   signup(data) {
     //this.makeFetch('/signup', 'POST', data)
     fetch(`${this.baseUrl}/signup`, {
@@ -44,22 +22,34 @@ export default class MainApi {
       .then((res) => {
         return res.json();
       })
-      .then(d => localStorage.setItem("data", JSON.stringify(d)))
+      .then((d) => localStorage.setItem("data", JSON.stringify(d)))
       .catch((e) => localStorage.setItem("error", e));
   }
 
   signin(data) {
     fetch(`${this.baseUrl}/signin`, {
       method: "POST",
-      mode: "cors",
+      credentials: "include",
+      mode: 'cors',
+      sameSite: 'none',
+      secure: true,
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+       body: JSON.stringify({
+        email: data.email,
+        password: data.password,
+      }),
     })
-      .then((res) => localStorage.setItem("response", JSON.stringify(res)))
-      .then((d) => {
-        localStorage.setItem("datatoken", JSON.stringify(d));
+      .then((res) => res.json())
+      .then(d => {
+        console.log(d);
+        if (d.token) {
+          localStorage.setItem('isLogged', true)
+          localStorage.setItem('token', d.token)
+          this.getUserData();
+          console.log('Ты авторизовался')
+        }
       })
       .catch((err) => {
         console.log(`Произошла ошибка авторизации - ${err}`);
@@ -67,24 +57,33 @@ export default class MainApi {
   } //аутентифицирует пользователя на основе почты и пароля;
 
   getUserData() {
-    return this.makeFetch("users/me");
+    // this.makeFetch("users/me");
+    fetch(`${this.baseUrl}/users/me`, {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": localStorage.getItem('token')
+      }
+    })
+    .then(res => res.json())
+    .then(data => Object.values(data).forEach(el => localStorage.setItem('user', JSON.stringify(el))))
+    .catch(err => console.log(err));
   }
 
-  getArticles() {
-    return this.makeFetch("/articles");
-  }
+  // getArticles() {
+  //   return this.makeFetch("/articles");
+  // }
 
-  createArticle({ keyword, title, text, date, source, link, image }) {
-    return this.makeFetch("/articles", "POST", {
-      keyword,
-      title,
-      text,
-      date,
-      source,
-      link,
-      image,
-    });
-  }
+  // createArticle({ keyword, title, text, date, source, link, image }) {
+  //   return this.makeFetch("/articles", "POST", {
+  //     keyword,
+  //     title,
+  //     text,
+  //     date,
+  //     source,
+  //     link,
+  //     image,
+  //   });
+  // }
 
   removeArticle(id) {
     return this.makeFetch(`/articles/${id}`, "DELETE");
