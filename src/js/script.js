@@ -20,25 +20,30 @@ import NewsCardList from "./components/NewsCardList.js";
 
   const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
 
+  const mainApi = new MainApi(mainApiUrl);
+
+
+
   const newsApiUrl = "http://newsapi.org/v2/everything?";
+  let pageSize = 100;
 
   const newsApiOptions = {
     // keyword: 'q=Биткоин',
     language: "language=ru",
     from: "from=2020-12-3",
     to: "to=2020-12-11",
-    pageSize: "pageSize=100",
+    pageSize: `pageSize=${pageSize}`,
     apiKey: "apiKey=1d64843b524543f282822827c5f497ac",
   };
 
-  const mainApi = new MainApi(mainApiUrl);
-
-  // Promise.all([
-  //   newsApi.getNews()
-  // ])
 
   const searchForm = document.querySelector(".banner__content__form");
   const searchBtn = document.querySelector(".banner__content__form_btn");
+  const showMoreBtn = document.querySelector('.results__button');
+
+  const news = new NewsCardList(document.querySelector(".results__news"));
+
+  news.showMore(showMoreBtn);
 
   searchForm.addEventListener("input", (e) => {
     newsApiOptions.keyword = `q=${e.target.value}`;
@@ -46,13 +51,20 @@ import NewsCardList from "./components/NewsCardList.js";
 
   searchBtn.addEventListener("click", (e) => {
     const newsApi = new NewsApi(newsApiUrl, newsApiOptions);
-    const news = new NewsCardList(document.querySelector(".results__news"));
 
     newsApi
       .getNews()
       .then((res) => news.renderResults(res))
-      .catch((e) => console.log(e));
+      .catch((e) => console.log(e))
+      .finally(f => news.showMore(showMoreBtn));
   });
+
+  showMoreBtn.addEventListener('click', () => news.showMoreNews());
+
+
+
+
+
 
   const user = JSON.parse(localStorage.getItem("user"));
   const header = new Header(user);

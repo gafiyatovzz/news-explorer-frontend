@@ -48,7 +48,10 @@
       <nav class="nav__mobile-wrapper hidden">
         <div class="nav__mobile-wrapper_head">
           <a href="#">
-            <img src="<%= require('./assets/icons/logo.svg') %>" alt="Логотип">
+            <img
+              src="<%= require('./assets/icons/logo.svg') %>"
+              alt="Логотип"
+            />
           </a>
           <button class="close" type="button">
             <img
@@ -66,12 +69,11 @@
             <button class="button button__auth hidden">
               <span>Авторизоваться</span>
               <img
-                  class="ico-logout"
-                  src="<%= require('./assets/icons/logout.svg') %>"
-                  alt="Иконка выхода"
-                />
+                class="ico-logout"
+                src="<%= require('./assets/icons/logout.svg') %>"
+                alt="Иконка выхода"
+              />
             </button>
-
           </li>
         </ul>
       </nav>
@@ -141,13 +143,28 @@
               </p>
               <p class="results__news__card__content_source">Лента.ру</p>
             </div>
-          </article>
-          <article class="results__news__card">
-            <img
-              src="<%= require('./assets/images/image_08.png') %>"
-              alt="Превью новости"
-              class="results__news__card_img"
-            />
+          </article> -->
+          <!-- <article class="results__news__card">
+            <div class="results__news__card_top">
+              <div class="results__news__card_top_buttons">
+                <div class="top__buttons_container">
+                  <div class="top__buttons_btn btn-wishlist">
+                    <img
+                      src="<%= require('./assets/icons/save.svg') %>"
+                      alt=""
+                    />
+                  </div>
+                  <div class="top__buttons_text">
+                    Войдите, чтобы сохранять статьи
+                  </div>
+                </div>
+              </div>
+              <img
+                src="<%= require('./assets/images/image_08.png') %>"
+                alt="Превью новости"
+                class="results__news__card_img"
+              />
+            </div>
             <div class="results__news__card__content">
               <p class="results__news__card__content_date">2 августа 2019</p>
               <h2 class="results__news__card__content_title">
@@ -161,8 +178,9 @@
               <p class="results__news__card__content_source">Лента.ру</p>
             </div>
           </article> -->
+
         </div>
-        <button class="button results__button">Показать еще</button>
+        <button class="button results__button hidden">Показать еще</button>
       </section>
 
       <section class="about root">
@@ -260,6 +278,5 @@
         </nav>
       </div>
     </footer>
-
   </body>
 </html>

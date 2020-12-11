@@ -1,50 +1,53 @@
+import { CardTemplate } from "../constants/Templates/CardTemlate.js";
+
 export default class NewsCardList {
   constructor(container) {
     this.container = container;
+    this.results = [];
   }
 
   renderResults(cards) {
-    console.log(cards);
-    cards.forEach((card) => {
-      this.container.insertAdjacentHTML(
-        "beforeend",
-        `
-      <article class="results__news__card">
-        <img
-          src="${card.urlToImage}"
-          alt="Превью карточки"
-          class="results__news__card_img"
-        />
-        <div class="results__news__card__content">
-          <p class="results__news__card__content_date">${card.publishedAt}</p>
-          <h2 class="results__news__card__content_title">
-            ${card.title}
-          </h2>
-          <p class="results__news__card__content_text">
-            ${card.description}
-          </p>
-          <a href="${card.url}" class="results__news__card__content_source">${card.source.name}</a>
-        </div>
-      </article>
-    `
-      );
+    this._clearResults();
+    this.results = cards;
+    cards.forEach((card, i) => {
+      if (i < 3) {
+        this.container.insertAdjacentHTML("beforeend", CardTemplate(card));
+      }
     });
+    console.log("Длина контейнера ", this.container.children);
+
   } //принимает массив экземпляров карточек и отрисовывает их;
 
-  renderLoader() {
+  renderLoader() {} //отвечает за отрисовку лоудера;
 
-  } //отвечает за отрисовку лоудера;
+  renderError(err) {} //принимает объект ошибки и показывает ошибку в интерфейсе;
 
-  renderError(err) {
+  _clearResults() {
+    while (this.container.firstChild) {
+      this.container.firstChild.remove();
+    }
+  }
 
-  } //принимает объект ошибки и показывает ошибку в интерфейсе;
+  showMoreNews() {
+    let qty = this.container.childElementCount + 3;
 
-  showMore() {
+    this.renderResults(this.results);
+    this.results.forEach((card, i) => {
+      if (i > this.container.childElementCount && i < qty) {
+        this.container.insertAdjacentHTML("beforeend", CardTemplate(card));
+      }
+    });
+  }
 
+  showMore(btn) {
+    if (this.container.hasChildNodes()) {
+      btn.classList.remove("hidden")
+    } else if (this.container.childElementCount === 100){
+      btn.classList.add("hidden")
+    }
   } //отвечает за функциональность кнопки «Показать ещё»;
 
   addCard(card) {
     this.container.append(card);
-
   } //принимает экземпляр карточки и добавляет её в список.
 }

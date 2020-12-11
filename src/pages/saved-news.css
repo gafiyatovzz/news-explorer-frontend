@@ -32,6 +32,7 @@
 @import '../blocks/main/results/__news/__card/__content/_source/results__news__card__content_source.css';
 @import '../blocks/main/results/__news/__card/__content/_text/results__news__card__content_text.css';
 @import '../blocks/main/results/__news/__card/__content/_title/results__news__card__content_title.css';
+@import '../blocks/main/results/__news/__card/_buttons/results__news__card_top_buttons.css';
 
 /* ******* TITLE-SECTION ******** */
 @import '../blocks/main/title-section/title-section.css';
