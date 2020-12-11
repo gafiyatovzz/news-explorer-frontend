@@ -5,6 +5,8 @@ import ERROR_MESSAGES from "./constants/Errors/ERROR_MESSAGES.js";
 import AuthTemplate from "./constants/Templates/AuthTemplate.js";
 import SigninTemplate from "./constants/Templates/SigninTemplate.js";
 import Header from "./components/Header.js";
+import NewsApi from "./api/NewsApi.js";
+import NewsCardList from "./components/NewsCardList.js";
 
 (function () {
   const btnSignin = document.querySelector(".button__auth");
@@ -17,13 +19,40 @@ import Header from "./components/Header.js";
   const popupWrapper = popup.querySelector(".popup__wrapper");
 
   const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
-  const newsApiUrl = "";
+
+  const newsApiUrl = "http://newsapi.org/v2/everything?";
+
+  const newsApiOptions = {
+    // keyword: 'q=Биткоин',
+    language: "language=ru",
+    from: "from=2020-12-3",
+    to: "to=2020-12-11",
+    pageSize: "pageSize=100",
+    apiKey: "apiKey=1d64843b524543f282822827c5f497ac",
+  };
 
   const mainApi = new MainApi(mainApiUrl);
 
   // Promise.all([
-  //   mainApi.makeFetch(),
+  //   newsApi.getNews()
   // ])
+
+  const searchForm = document.querySelector(".banner__content__form");
+  const searchBtn = document.querySelector(".banner__content__form_btn");
+
+  searchForm.addEventListener("input", (e) => {
+    newsApiOptions.keyword = `q=${e.target.value}`;
+  });
+
+  searchBtn.addEventListener("click", (e) => {
+    const newsApi = new NewsApi(newsApiUrl, newsApiOptions);
+    const news = new NewsCardList(document.querySelector(".results__news"));
+
+    newsApi
+      .getNews()
+      .then((res) => news.renderResults(res))
+      .catch((e) => console.log(e));
+  });
 
   const user = JSON.parse(localStorage.getItem("user"));
   const header = new Header(user);
@@ -78,7 +107,6 @@ import Header from "./components/Header.js";
       }
     });
   });
-
 
   popupWrapper.addEventListener("click", newPopup.close());
 
