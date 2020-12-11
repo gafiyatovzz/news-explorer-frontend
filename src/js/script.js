@@ -36,14 +36,14 @@ import NewsCardList from "./components/NewsCardList.js";
     apiKey: "apiKey=1d64843b524543f282822827c5f497ac",
   };
 
-
+  const results = document.querySelector('.results');
   const searchForm = document.querySelector(".banner__content__form");
   const searchBtn = document.querySelector(".banner__content__form_btn");
   const showMoreBtn = document.querySelector('.results__button');
 
   const news = new NewsCardList(document.querySelector(".results__news"));
 
-  news.showMore(showMoreBtn);
+  news.showMore(showMoreBtn, results);
 
   searchForm.addEventListener("input", (e) => {
     newsApiOptions.keyword = `q=${e.target.value}`;

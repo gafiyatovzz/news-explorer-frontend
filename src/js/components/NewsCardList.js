@@ -39,9 +39,10 @@ export default class NewsCardList {
     });
   }
 
-  showMore(btn) {
+  showMore(btn, cont = '') {
     if (this.container.hasChildNodes()) {
       btn.classList.remove("hidden")
+      cont.classList.remove('hidden');
     } else if (this.container.childElementCount === 100){
       btn.classList.add("hidden")
     }
