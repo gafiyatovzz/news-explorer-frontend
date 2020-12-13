@@ -37,11 +37,10 @@
   font-size: 10px;
   align-items: center;
   justify-content: center;
-  display: none;
+  display: flex;
 }
 
-.top__buttons_btn.btn-wishlist:hover + .top__buttons_text {
-  display: flex;
+.top__buttons_btn.btn-wishlist:hover  {
   cursor: pointer;
 }
 

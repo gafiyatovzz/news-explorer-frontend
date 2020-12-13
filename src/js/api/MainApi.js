@@ -30,25 +30,24 @@ export default class MainApi {
     fetch(`${this.baseUrl}/signin`, {
       method: "POST",
       credentials: "include",
-      mode: 'cors',
-      sameSite: 'none',
+      mode: "cors",
+      sameSite: "none",
       secure: true,
       headers: {
         "Content-Type": "application/json",
       },
-       body: JSON.stringify({
+      body: JSON.stringify({
         email: data.email,
         password: data.password,
       }),
     })
       .then((res) => res.json())
-      .then(d => {
-        console.log(d);
+      .then((d) => {
         if (d.token) {
-          localStorage.setItem('isLogged', true)
-          localStorage.setItem('token', d.token)
+          localStorage.setItem("isLogged", true);
+          localStorage.setItem("token", d.token);
           this.getUserData();
-          console.log('Ты авторизовался')
+          console.log("Ты авторизовался");
         }
       })
       .catch((err) => {
@@ -57,35 +56,74 @@ export default class MainApi {
   } //аутентифицирует пользователя на основе почты и пароля;
 
   getUserData() {
-    // this.makeFetch("users/me");
     fetch(`${this.baseUrl}/users/me`, {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": localStorage.getItem('token')
-      }
+        'Authorization': localStorage.getItem("token"),
+      },
     })
-    .then(res => res.json())
-    .then(data => Object.values(data).forEach(el => localStorage.setItem('user', JSON.stringify(el))))
-    .catch(err => console.log(err));
+      .then((res) => res.json())
+      .then((data) =>
+        Object.values(data).forEach((el) =>
+          localStorage.setItem("user", JSON.stringify(el))
+        )
+      )
+      .catch((err) => console.log(err));
   }
 
-  // getArticles() {
-  //   return this.makeFetch("/articles");
-  // }
+  getArticles() {
+    return fetch(`${this.baseUrl}/articles`,{
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': localStorage.getItem("token"),
+      },
+    })
+    .then(res => res.json())
+    .then(data => data)
+    .catch(e => console.log('Ошибка при получении новостей', e));
+  }
 
-  // createArticle({ keyword, title, text, date, source, link, image }) {
-  //   return this.makeFetch("/articles", "POST", {
-  //     keyword,
-  //     title,
-  //     text,
-  //     date,
-  //     source,
-  //     link,
-  //     image,
-  //   });
-  // }
+  createArticle(article, keyword) {
+    return fetch(`${this.baseUrl}/articles`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': localStorage.getItem("token"),
+      },
+      body: JSON.stringify({
+        keyword: keyword,
+        title: article.title,
+        text: article.description,
+        date: article.publishedAt,
+        source: article.source.name,
+        link: article.url,
+        image: article.urlToImage,
+      }),
+    })
+    .then(res => res.json())
+    .then(d => {
+      return d;
+    })
+    .catch(e => console.log('Ошибка при сохранении карточки', e));
+  }
+
+  logout() {
+    // localStorage.clear();
+  }
 
   removeArticle(id) {
-    return this.makeFetch(`/articles/${id}`, "DELETE");
+    return fetch(`${this.baseUrl}/articles/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        'Authorization': localStorage.getItem("token"),
+      },
+      // body: JSON.stringify({
+      //   _id: id,
+      // })
+    })
+    .then(res => console.log(res))
+    .then(d => console.log(d))
+    .catch(e => console.log('Ошибка при удалении карточки', e));
   }
 }

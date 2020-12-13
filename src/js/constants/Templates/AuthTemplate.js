@@ -46,6 +46,7 @@ const AuthTemplate = `
       <button type="submit" class="button popup__button _disabled" disabled>
         Зарегистрироваться
       </button>
+      <span id="error-api" class="error-message"></span>
     </form>
     <p class="popup__sign">
       или <a class="popup__sign_link" href="#">Войти</a>

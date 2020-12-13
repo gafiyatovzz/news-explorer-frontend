@@ -5,8 +5,11 @@
   font-size: 26px;
   line-height: 30px;
   color: #1A1B22;
-
   margin: 0 0 16px 0;
+  display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1024px) {

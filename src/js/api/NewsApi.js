@@ -6,16 +6,22 @@ export default class NewsApi {
   }
 
   _concatOption() {
-    return Object.values(this.option).join('&');
+    return Object.values(this.option).join("&");
   }
 
   getNews() {
-    return fetch(this.str,
-      {
-        "Content-Type": "application/json",
+    return fetch(this.str, {
+      "Content-Type": "application/json",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw res
+        }
+        return res.json();
       })
-      .then(res => res.json())
-      .then(data => data.articles)
-      .catch(err => console.log(`Ошибка при запросе к ${this.url} :`, err));
+      .then((data) => {
+        return data.articles;
+      })
+      .catch((err) => err);
   } //возвращает список новостей на основе запроса.
 }

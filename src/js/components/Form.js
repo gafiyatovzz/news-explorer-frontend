@@ -5,13 +5,13 @@ export default class Form {
     this.form = form;
     this.message = message;
     this.inputs = [...this.form.querySelectorAll("input")];
-    this.button = this.form.querySelector(".popup__button");
+    this.button = this.form.querySelector("button");
     this.data = {};
     this._validateForm();
   }
 
   setServerError() {
-    this._getInfo()
+    this._getInfo();
     this._clear();
   } // добавляет форме ошибку, пришедшую с сервера;
 

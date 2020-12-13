@@ -9,6 +9,7 @@
 @import '../blocks/ui/form/__input/form__input.css';
 @import '../blocks/ui/form/__button/form__button.css';
 @import '../blocks/ui/button/action/logout.css';
+@import '../blocks/ui/button/action/wishlist-ico.css';
 
 /* ******** HEADER ******** */
 @import '../blocks/header/header.css';

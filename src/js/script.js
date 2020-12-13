@@ -5,70 +5,24 @@ import ERROR_MESSAGES from "./constants/Errors/ERROR_MESSAGES.js";
 import AuthTemplate from "./constants/Templates/AuthTemplate.js";
 import SigninTemplate from "./constants/Templates/SigninTemplate.js";
 import Header from "./components/Header.js";
-import NewsApi from "./api/NewsApi.js";
-import NewsCardList from "./components/NewsCardList.js";
+
 
 (function () {
   const btnSignin = document.querySelector(".button__auth");
   const burgerMenu = document.querySelector(".burger-menu");
   const mobileNav = document.querySelector(".nav__mobile-wrapper");
-  const mobileNavHead = document.querySelector(".nav__mobile-wrapper_head");
+
+  const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
+  const mainApi = new MainApi(mainApiUrl);
 
   /* ******** POPUP SIGNIN INIT ******** */
   const popup = document.querySelector(".popup");
   const popupWrapper = popup.querySelector(".popup__wrapper");
 
-  const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
-
-  const mainApi = new MainApi(mainApiUrl);
-
-
-
-  const newsApiUrl = "http://newsapi.org/v2/everything?";
-  let pageSize = 100;
-
-  const newsApiOptions = {
-    // keyword: 'q=Биткоин',
-    language: "language=ru",
-    from: "from=2020-12-3",
-    to: "to=2020-12-11",
-    pageSize: `pageSize=${pageSize}`,
-    apiKey: "apiKey=1d64843b524543f282822827c5f497ac",
-  };
-
-  const results = document.querySelector('.results');
-  const searchForm = document.querySelector(".banner__content__form");
-  const searchBtn = document.querySelector(".banner__content__form_btn");
-  const showMoreBtn = document.querySelector('.results__button');
-
-  const news = new NewsCardList(document.querySelector(".results__news"));
-
-  news.showMore(showMoreBtn, results);
-
-  searchForm.addEventListener("input", (e) => {
-    newsApiOptions.keyword = `q=${e.target.value}`;
-  });
-
-  searchBtn.addEventListener("click", (e) => {
-    const newsApi = new NewsApi(newsApiUrl, newsApiOptions);
-
-    newsApi
-      .getNews()
-      .then((res) => news.renderResults(res))
-      .catch((e) => console.log(e))
-      .finally(f => news.showMore(showMoreBtn));
-  });
-
-  showMoreBtn.addEventListener('click', () => news.showMoreNews());
-
-
-
-
-
+  const logout = document.querySelector(".ico-logout");
 
   const user = JSON.parse(localStorage.getItem("user"));
   const header = new Header(user);
-  header.isLogged();
   header.render();
 
   const newPopup = new Popup(popup, SigninTemplate);
@@ -76,14 +30,14 @@ import NewsCardList from "./components/NewsCardList.js";
   btnSignin.addEventListener("click", (e) => {
     newPopup.open();
     const formSignin = popup.querySelector("form");
-    const btnSignin = popup.querySelector(".popup__button");
+    const btnSig = popup.querySelector(".popup__button");
 
     const contentPopup = document.querySelector(".popup__content");
 
     const f = new Form(formSignin, ERROR_MESSAGES);
 
     formSignin.addEventListener("submit", (e) => {
-      btnSignin.addEventListener("click", () => {
+      btnSig.addEventListener("click", () => {
         mainApi.signin(f._getInfo());
         newPopup.close();
         const user = JSON.parse(localStorage.getItem("user"));
@@ -155,6 +109,8 @@ import NewsCardList from "./components/NewsCardList.js";
       navMobileWrapper.classList.add("hidden");
     });
   });
+
+  logout.addEventListener("click", mainApi.logout());
 
   // btnSignin.forEach(btn => {
   //   btn.addEventListener("click", (e) => {

@@ -13,10 +13,10 @@ const isDev = process.env.NODE_ENV === "development";
 
 module.exports = {
   context: path.resolve(__dirname, "src"),
-  entry: [
-    './pages/mainPage.js',
-    './pages/savedNews.js'
-  ],
+  entry: {
+    main: './pages/mainPage.js',
+    saved: './pages/savedNews.js'
+  },
   output: {
     path: path.resolve(__dirname, newLocal),
     filename: "./js/[name].[hash].js",
@@ -100,7 +100,7 @@ module.exports = {
       inject: true,
       template: "./main.html",
       filename: "main.html",
-      // chunks: ['main'],
+       chunks: ['main'],
       // css: './pages/saved-news.css',
       // favicon: "./assets/images/favicon.ico"
     }),
@@ -108,7 +108,7 @@ module.exports = {
       inject: true,
       template: "./saved-news.html",
       filename: "saved-news.html",
-      // chunks: ['saved'],
+       chunks: ['saved'],
       // css: './pages/saved-news.css',
       // favicon: "./assets/images/favicon.ico"
     }),
