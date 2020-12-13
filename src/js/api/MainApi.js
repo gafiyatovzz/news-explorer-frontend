@@ -43,6 +43,7 @@ export default class MainApi {
     })
       .then((res) => res.json())
       .then((d) => {
+        console.log(d);
         if (d.token) {
           localStorage.setItem("isLogged", true);
           localStorage.setItem("token", d.token);

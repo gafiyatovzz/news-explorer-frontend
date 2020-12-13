@@ -6,18 +6,6 @@ export default class Header {
 
   isLogged() {
     return Boolean(localStorage.getItem("isLogged"));
-    // if (Boolean(localStorage.getItem('isLogged')) === true) {
-    //   this.btnsAuth.forEach(btn => {
-    //     btn.textContent = this.user.name;
-    //   })
-    //   this.render();
-    //   return true
-    // } else {
-    //   this.btnsAuth.forEach(btn => {
-    //     btn.textContent = 'Авторизоваться';
-    //   })
-    //   return false
-    // }
   }
 
   _getSelector(elem) {

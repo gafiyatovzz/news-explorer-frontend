@@ -15,10 +15,15 @@ import NewsCard from "../js/components/NewsCard.js";
   const newsApiUrl = "http://newsapi.org/v2/everything?";
   let pageSize = 100;
 
+  const date = new Date()
+  const newdate = new Date(date.valueOf() + ((24 * 60 * 60 * 1000) * -7));
+  const iso = newdate.toISOString().substr(0,10);
+  const now = date.toISOString().substr(0,10);
+
   const newsApiOptions = {
     language: "language=ru",
-    from: "from=2020-12-3",
-    to: "to=2020-12-11",
+    from: `from=${iso}`,
+    to: `to=${now}`,
     pageSize: `pageSize=${pageSize}`,
     apiKey: "apiKey=4a49cc35604e457ca1790c1d9689955e",
   };
@@ -65,7 +70,7 @@ import NewsCard from "../js/components/NewsCard.js";
         results.classList.remove('hidden')
         news.renderResults(res);
       })
-      .then((res) => {
+      .then(() => {
         resultCards = document.querySelectorAll(".results__news__card");
         resultCards.forEach((card) => {
           card.addEventListener("click", (e) => {
