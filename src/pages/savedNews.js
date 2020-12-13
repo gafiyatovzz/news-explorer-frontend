@@ -67,5 +67,4 @@ import NewsCardList from "../js/components/NewsCardList";
         });
       });
   });
-
 })();
