@@ -56,6 +56,16 @@ import NewsCardList from "../js/components/NewsCardList";
     savedNews.showMoreNews();
     resultCards = document.querySelectorAll(".results__news__card");
     savedNews.showMore(showMoreBtn, results);
+
+    const trashBtns = document.querySelectorAll(".btn-wishlist");
+      trashBtns.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          const idCard = e.target.closest('.results__news__card').getAttribute('id');
+          console.log(idCard);
+          mainApi.removeArticle(idCard)
+          e.target.closest('.results__news__card').remove()
+        });
+      });
   });
 
 })();
