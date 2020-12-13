@@ -1,4 +1,5 @@
 export const CardTemplate = (card, date) => {
+  console.log(card);
   card.urlToImage
     ? (card = {
         title: card.title,
@@ -14,7 +15,7 @@ export const CardTemplate = (card, date) => {
     : (card = {
         title: card.title,
         text: card.text,
-        date: card.date,
+        date: date,
         source: card.source,
         link: card.link,
         image: card.image,

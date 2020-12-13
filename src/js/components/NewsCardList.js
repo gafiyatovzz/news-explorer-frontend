@@ -20,8 +20,9 @@ export default class NewsCardList {
     this._clearResults();
     this.results = cards;
     cards.forEach((card, i) => {
+      const date = card.publishedAt ? card.publishedAt : card.date;
       if (i < 3) {
-        this.container.insertAdjacentHTML("beforeend", CardTemplate(card, this.dateForamated(card.publishedAt)));
+        this.container.insertAdjacentHTML("beforeend", CardTemplate(card, this.dateForamated(date)));
       }
     });
   } //принимает массив экземпляров карточек и отрисовывает их;
@@ -52,8 +53,6 @@ export default class NewsCardList {
   showMore(btn, cont = '') {
     if (this.container.hasChildNodes()) {
       btn.classList.remove("hidden");
-      console.log('LOL', this.results.length);
-      console.log('LOOL', this.container.childElementCount);
       cont ? cont.classList.remove('hidden') : console.log(123);;
     } else if (this.container.childElementCount === this.results.length) {
       btn.classList.add("hidden");

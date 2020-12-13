@@ -84,6 +84,7 @@ export default class MainApi {
   }
 
   createArticle(article, keyword) {
+    console.log(article.publishedAt);
     return fetch(`${this.baseUrl}/articles`, {
       method: "POST",
       headers: {

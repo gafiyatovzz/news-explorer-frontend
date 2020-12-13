@@ -32,7 +32,6 @@ import NewsCardList from "../js/components/NewsCardList";
       }, {});
 
       titleSection.textContent = `${nameUser}, у вас ${res.data.length} сохранённых статей`;
-
       return res.data;
     })
     .then((res) => {
