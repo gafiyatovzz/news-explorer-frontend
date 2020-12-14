@@ -21,7 +21,12 @@ import NewsCardList from "../js/components/NewsCardList";
   mainApi
     .getArticles()
     .then((res) => {
-      res.data.forEach((item) => {
+      savedNews.renderResults(res.data);
+      savedNews.showMore(showMoreBtn, results);
+      return res.data
+    })
+    .then((data) => {
+      data.forEach((item) => {
         keywords.push(item.keyword);
       });
 
@@ -31,12 +36,8 @@ import NewsCardList from "../js/components/NewsCardList";
         return acc;
       }, {});
 
-      titleSection.textContent = `${nameUser}, у вас ${res.data.length} сохранённых статей`;
-      return res.data;
-    })
-    .then((res) => {
-      savedNews.renderResults(res);
-      savedNews.showMore(showMoreBtn, results);
+      titleSection.textContent = `${nameUser}, у вас ${data.length} сохранённых статей`;
+      return data;
     })
     .then(()=> {
       const trashBtns = document.querySelectorAll(".btn-wishlist");
@@ -54,7 +55,7 @@ import NewsCardList from "../js/components/NewsCardList";
 
   showMoreBtn.addEventListener("click", () => {
     savedNews.showMoreNews();
-    resultCards = document.querySelectorAll(".results__news__card");
+    // const resultCards = document.querySelectorAll(".results__news__card");
     savedNews.showMore(showMoreBtn, results);
 
     const trashBtns = document.querySelectorAll(".btn-wishlist");

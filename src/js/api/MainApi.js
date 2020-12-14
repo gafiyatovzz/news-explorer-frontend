@@ -20,10 +20,12 @@ export default class MainApi {
       body: JSON.stringify(data),
     })
       .then((res) => {
+        if (!res.ok) {
+          throw res
+        }
         return res.json();
       })
       .then((d) => localStorage.setItem("data", JSON.stringify(d)))
-      .catch((e) => localStorage.setItem("error", e));
   }
 
   signin(data) {
@@ -38,7 +40,12 @@ export default class MainApi {
         password: data.password,
       }),
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw res
+        }
+        return res.json()
+      })
       .then((d) => {
         if (d.token) {
           localStorage.setItem("isLogged", true);
@@ -57,7 +64,12 @@ export default class MainApi {
         'Authorization': localStorage.getItem("token"),
       },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw res
+        }
+        return res.json()
+      })
       .then((data) =>
         Object.values(data).forEach((el) =>
           localStorage.setItem("user", JSON.stringify(el))
@@ -72,7 +84,12 @@ export default class MainApi {
         'Authorization': localStorage.getItem("token"),
       },
     })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw res
+      }
+      return res.json()
+    })
     .then(data => data)
   }
 
@@ -94,7 +111,12 @@ export default class MainApi {
         image: article.urlToImage,
       }),
     })
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) {
+        throw res
+      }
+      return res.json()
+    })
     .then(d => {
       return d;
     })
@@ -115,8 +137,12 @@ export default class MainApi {
       //   _id: id,
       // })
     })
-    .then(res => console.log('remove', res))
+    .then(res => {
+      if (!res.ok) {
+        throw res
+      }
+      return res.json();
+    })
     .then(d => console.log('rem', d))
-    .catch(e => console.log('Ошибка при удалении карточки', e));
   }
 }

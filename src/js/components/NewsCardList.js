@@ -17,6 +17,7 @@ export default class NewsCardList {
   }
 
   renderResults(cards) {
+    this._clearResults();
     this.results = cards;
     cards.forEach((card, i) => {
       const date = card.publishedAt ? card.publishedAt : card.date;

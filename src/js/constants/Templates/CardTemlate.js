@@ -1,5 +1,4 @@
 export const CardTemplate = (card, date) => {
-  console.log(card);
   card.urlToImage
     ? (card = {
         title: card.title,
