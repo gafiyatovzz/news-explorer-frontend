@@ -43,7 +43,7 @@ import NewsCardList from "../js/components/NewsCardList";
       trashBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const idCard = e.target.closest('.results__news__card').getAttribute('id');
-          console.log(idCard);
+          console.log('idcard', idCard);
           mainApi.removeArticle(idCard)
           e.target.closest('.results__news__card').remove()
         });
@@ -61,7 +61,7 @@ import NewsCardList from "../js/components/NewsCardList";
       trashBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const idCard = e.target.closest('.results__news__card').getAttribute('id');
-          console.log(idCard);
+          console.log('idcard', idCard);
           mainApi.removeArticle(idCard)
           e.target.closest('.results__news__card').remove()
         });

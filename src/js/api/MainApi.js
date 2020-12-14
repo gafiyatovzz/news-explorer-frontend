@@ -40,7 +40,6 @@ export default class MainApi {
     })
       .then((res) => res.json())
       .then((d) => {
-        console.log(d);
         if (d.token) {
           localStorage.setItem("isLogged", true);
           localStorage.setItem("token", d.token);
@@ -48,9 +47,7 @@ export default class MainApi {
           console.log("Ты авторизовался");
         }
       })
-      .catch((err) => {
-        console.log(`Произошла ошибка авторизации - ${err}`);
-      });
+
   } //аутентифицирует пользователя на основе почты и пароля;
 
   getUserData() {
@@ -66,7 +63,6 @@ export default class MainApi {
           localStorage.setItem("user", JSON.stringify(el))
         )
       )
-      .catch((err) => console.log(err));
   }
 
   getArticles() {
@@ -78,7 +74,6 @@ export default class MainApi {
     })
     .then(res => res.json())
     .then(data => data)
-    .catch(e => console.log('Ошибка при получении новостей', e));
   }
 
   createArticle(article, keyword) {
@@ -103,7 +98,6 @@ export default class MainApi {
     .then(d => {
       return d;
     })
-    .catch(e => console.log('Ошибка при сохранении карточки', e));
   }
 
   logout() {
@@ -121,8 +115,8 @@ export default class MainApi {
       //   _id: id,
       // })
     })
-    .then(res => console.log(res))
-    .then(d => console.log(d))
+    .then(res => console.log('remove', res))
+    .then(d => console.log('rem', d))
     .catch(e => console.log('Ошибка при удалении карточки', e));
   }
 }

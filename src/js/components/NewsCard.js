@@ -1,6 +1,5 @@
 export default class NewsCard {
   renderIcon(etarget) {
-    console.log(etarget);
     if (etarget.closest('svg').classList.contains("wishlist-ico")) {
       etarget.closest('svg').classList.add("wishlist-ico_saved");
       etarget.closest('svg').classList.remove("wishlist-ico");
