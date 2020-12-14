@@ -68,7 +68,8 @@ import NewsCard from "../js/components/NewsCard.js";
       .then((res) => {
         resultsApi = res;
         console.log('ressss', res);
-        results.classList.remove('hidden')
+        results.classList.remove('hidden');
+        news._clearResults();
         news.renderResults(res);
       })
       .then(() => {

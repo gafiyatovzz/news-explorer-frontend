@@ -22,6 +22,5 @@ export default class NewsApi {
       .then((data) => {
         return data.articles;
       })
-      .catch((err) => err);
   } //возвращает список новостей на основе запроса.
 }
