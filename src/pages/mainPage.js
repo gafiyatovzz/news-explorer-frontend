@@ -101,7 +101,7 @@ import NewsCard from "../js/components/NewsCard.js";
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
   });
-
+console.log('res',resultsApi);
   resultCards = document.querySelectorAll(".results__news__card");
     resultCards.forEach((card) => {
       card.addEventListener("click", (e) => {
