@@ -97,6 +97,7 @@ import Header from "./components/Header.js";
       const f = new Form(form, ERROR_MESSAGES);
 
       form.addEventListener("submit", (e) => {
+        e.preventDefault()
         popupBtn.addEventListener("click", () => {
           mainApi.signin(f._getInfo());
           newPopup.close();
