@@ -67,6 +67,7 @@ import NewsCard from "../js/components/NewsCard.js";
       .getNews()
       .then((res) => {
         resultsApi = res;
+        console.log('ressss', res);
         results.classList.remove('hidden')
         news.renderResults(res);
       })
@@ -101,7 +102,6 @@ import NewsCard from "../js/components/NewsCard.js";
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
   });
-console.log('res',resultsApi);
   resultCards = document.querySelectorAll(".results__news__card");
     resultCards.forEach((card) => {
       card.addEventListener("click", (e) => {
