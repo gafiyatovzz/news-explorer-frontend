@@ -98,15 +98,28 @@ import NewsCard from "../js/components/NewsCard.js";
         news.showMore(showMoreBtn);
       });
   });
-
+console.log(showMoreBtn);
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
-
+    console.log('click');
     resultCards = document.querySelectorAll(".results__news__card");
     resultCards.forEach((card) => {
       card.addEventListener("click", (e) => {
-        if (e.target.closest('div').classList.contains('btn-wishlist')) {
-          console.log('saved');
+        if (e.target.closest('svg').classList.contains('wishlist-ico')) {
+          const title = e.target.closest('.results__news__card').querySelector('.results__news__card__content_title').textContent;
+          resultsApi.forEach(card => {
+            if (card.title === title) {
+              mainApi.createArticle(card, keywords[keywords.length - 1])
+              .then(res => {
+                e.target.closest('.results__news__card').setAttribute('id', res.data._id);
+              })
+              newsCard.renderIcon(e.target);
+            }
+          })
+        } else if (e.target.closest('svg').classList.contains('wishlist-ico_saved')) {
+          const idCard = e.target.closest('.results__news__card').getAttribute('id');
+          mainApi.removeArticle(idCard);
+          newsCard.renderIcon(e.target);
         }
       });
     });
