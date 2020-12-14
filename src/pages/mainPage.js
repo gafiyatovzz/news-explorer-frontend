@@ -100,7 +100,9 @@ import NewsCard from "../js/components/NewsCard.js";
   });
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
-    resultCards = document.querySelectorAll(".results__news__card");
+  });
+
+  resultCards = document.querySelectorAll(".results__news__card");
     resultCards.forEach((card) => {
       card.addEventListener("click", (e) => {
         console.log('target', e.target);
@@ -122,6 +124,5 @@ import NewsCard from "../js/components/NewsCard.js";
         }
       });
     });
-  });
 
 })();
