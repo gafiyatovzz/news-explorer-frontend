@@ -101,11 +101,12 @@ import NewsCard from "../js/components/NewsCard.js";
   });
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
+    console.log('ressss', res);
+
     newsApi
       .getNews()
       .then((res) => {
         resultsApi = res;
-        console.log('ressss', res);
         results.classList.remove('hidden')
         news.renderResults(res);
       })
