@@ -101,28 +101,39 @@ import NewsCard from "../js/components/NewsCard.js";
   });
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
-  });
-  resultCards = document.querySelectorAll(".results__news__card");
-    resultCards.forEach((card) => {
-      card.addEventListener("click", (e) => {
-        console.log('target', e.target);
-        if (e.target.closest('svg').classList.contains('wishlist-ico')) {
-          const title = e.target.closest('.results__news__card').querySelector('.results__news__card__content_title').textContent;
-          resultsApi.forEach(card => {
-            if (card.title === title) {
-              mainApi.createArticle(card, keywords[keywords.length - 1])
-              .then(res => {
-                e.target.closest('.results__news__card').setAttribute('id', res.data._id);
+    newsApi
+      .getNews()
+      .then((res) => {
+        resultsApi = res;
+        console.log('ressss', res);
+        results.classList.remove('hidden')
+        news.renderResults(res);
+      })
+      .then(() => {
+        resultCards = document.querySelectorAll(".results__news__card");
+        resultCards.forEach((card) => {
+          card.addEventListener("click", (e) => {
+            if (e.target.closest('svg').classList.contains('wishlist-ico')) {
+              const title = e.target.closest('.results__news__card').querySelector('.results__news__card__content_title').textContent;
+              resultsApi.forEach(card => {
+                if (card.title === title) {
+                  mainApi.createArticle(card, keywords[keywords.length - 1])
+                  .then(res => {
+                    e.target.closest('.results__news__card').setAttribute('id', res.data._id);
+                  })
+                  newsCard.renderIcon(e.target);
+                }
               })
+            } else if (e.target.closest('svg').classList.contains('wishlist-ico_saved')) {
+              const idCard = e.target.closest('.results__news__card').getAttribute('id');
+              mainApi.removeArticle(idCard);
               newsCard.renderIcon(e.target);
             }
-          })
-        } else if (e.target.closest('svg').classList.contains('wishlist-ico_saved')) {
-          const idCard = e.target.closest('.results__news__card').getAttribute('id');
-          mainApi.removeArticle(idCard);
-          newsCard.renderIcon(e.target);
-        }
-      });
-    });
+          });
+        });
+      })
+      .catch((e) => errorApi.insertAdjacentHTML("beforeend", e))
+  });
+
 
 })();
