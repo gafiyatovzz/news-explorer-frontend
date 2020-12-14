@@ -101,7 +101,6 @@ import NewsCard from "../js/components/NewsCard.js";
   });
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
-    console.log('ress', res);
 
     const newsApi = new NewsApi(newsApiUrl, newsApiOptions);
     const newsCard = new NewsCard();
