@@ -12,7 +12,7 @@ import NewsCard from "../js/components/NewsCard.js";
   const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
   const mainApi = new MainApi(mainApiUrl);
 
-  const newsApiUrl = "http://newsapi.org/v2/everything?";
+  const newsApiUrl = "https://newsapi.org/v2/everything?";
   let pageSize = 100;
 
   const date = new Date()
