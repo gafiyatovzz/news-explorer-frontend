@@ -98,12 +98,11 @@ import NewsCard from "../js/components/NewsCard.js";
         news.showMore(showMoreBtn);
       });
   });
-console.log(showMoreBtn);
   showMoreBtn.addEventListener("click", () => {
     news.showMoreNews();
-    console.log('click');
     resultCards = document.querySelectorAll(".results__news__card");
     resultCards.forEach((card) => {
+      console.log('card',card);
       card.addEventListener("click", (e) => {
         if (e.target.closest('svg').classList.contains('wishlist-ico')) {
           const title = e.target.closest('.results__news__card').querySelector('.results__news__card__content_title').textContent;
