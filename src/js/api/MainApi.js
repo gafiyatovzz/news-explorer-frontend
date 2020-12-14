@@ -29,10 +29,7 @@ export default class MainApi {
   signin(data) {
     fetch(`${this.baseUrl}/signin`, {
       method: "POST",
-      credentials: "include",
-      mode: "cors",
-      sameSite: "none",
-      secure: true,
+
       headers: {
         "Content-Type": "application/json",
       },

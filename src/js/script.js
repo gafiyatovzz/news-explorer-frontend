@@ -36,7 +36,8 @@ import Header from "./components/Header.js";
     const f = new Form(formSignin, ERROR_MESSAGES);
 
     formSignin.addEventListener("submit", (e) => {
-      btnSig.addEventListener("click", () => {
+      e.preventDefault();
+      btnSig.addEventListener("click", (ev) => {
         mainApi.signin(f._getInfo());
         newPopup.close();
         const user = JSON.parse(localStorage.getItem("user"));
@@ -67,6 +68,7 @@ import Header from "./components/Header.js";
         const form = popup.querySelector("form");
         const formSign = new Form(form, ERROR_MESSAGES);
         form.addEventListener("submit", (e) => {
+          e.preventDefault()
           btnSign.addEventListener("click", () => {
             mainApi.signin(formSign._getInfo());
             newPopup.close();
@@ -97,7 +99,7 @@ import Header from "./components/Header.js";
       const f = new Form(form, ERROR_MESSAGES);
 
       form.addEventListener("submit", (e) => {
-        e.preventDefault()
+        e.preventDefault();
         popupBtn.addEventListener("click", () => {
           mainApi.signin(f._getInfo());
           newPopup.close();
@@ -118,6 +120,7 @@ import Header from "./components/Header.js";
           const formSignup = new Form(form, ERROR_MESSAGES);
 
           form.addEventListener("submit", (e) => {
+            e.preventDefault()
             btnAuth.addEventListener("click", () => {
               console.log('clcik');
               mainApi.signup(formSignup._getInfo());
@@ -132,7 +135,8 @@ import Header from "./components/Header.js";
           const form = popup.querySelector("form");
           const formSign = new Form(form, ERROR_MESSAGES);
 
-          form.addEventListener("submit", () => {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault()
             popBtn.addEventListener("click", () => {
               const user = JSON.parse(localStorage.getItem("user"));
               const header = new Header(user);
