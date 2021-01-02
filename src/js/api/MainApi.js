@@ -143,6 +143,5 @@ export default class MainApi {
       }
       return res.json();
     })
-    .then(d => console.log('rem', d))
   }
 }
