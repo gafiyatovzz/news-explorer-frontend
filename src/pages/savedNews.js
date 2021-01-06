@@ -4,6 +4,7 @@ import "./saved-news.css";
 
 import MainApi from "../js/api/MainApi.js";
 import NewsCardList from "../js/components/NewsCardList";
+import {mainApiConfig, newsApiConfig} from '../js/constants/Config/Config.js';
 
 (function () {
   const results = document.querySelector(".results");
@@ -11,11 +12,10 @@ import NewsCardList from "../js/components/NewsCardList";
   const showMoreBtn = document.querySelector(".results__button");
   const nameUser = document.querySelector(".button__auth > span").textContent;
   const titleSection = document.querySelector(".title-section__results");
-  const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
 
   let keywords = [];
 
-  const mainApi = new MainApi(mainApiUrl);
+  const mainApi = new MainApi(mainApiConfig.url);
   const savedNews = new NewsCardList(resultsContainer);
 
   mainApi
@@ -44,7 +44,6 @@ import NewsCardList from "../js/components/NewsCardList";
       trashBtns.forEach((btn) => {
         btn.addEventListener("click", (e) => {
           const idCard = e.target.closest('.results__news__card').getAttribute('id');
-          console.log('idcard', idCard);
           mainApi.removeArticle(idCard)
           e.target.closest('.results__news__card').remove()
         });

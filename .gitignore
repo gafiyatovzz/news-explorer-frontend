@@ -17,3 +17,5 @@ node_modules
 dist
 # src
 config/keys.dev.js
+
+.firebase

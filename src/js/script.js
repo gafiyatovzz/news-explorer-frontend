@@ -1,5 +1,6 @@
 import Popup from "./components/Popup.js";
 import MainApi from "./api/MainApi.js";
+import {newsApiConfig, mainApiConfig} from './constants/Config/Config.js';
 import Form from "./components/Form.js";
 import ERROR_MESSAGES from "./constants/Errors/ERROR_MESSAGES.js";
 import AuthTemplate from "./constants/Templates/AuthTemplate.js";
@@ -11,8 +12,7 @@ import Header from "./components/Header.js";
   const burgerMenu = document.querySelector(".burger-menu");
   const mobileNav = document.querySelector(".nav__mobile-wrapper");
 
-  const mainApiUrl = "https://api.gz-news-explorer.students.nomoreparties.co";
-  const mainApi = new MainApi(mainApiUrl);
+  const mainApi = new MainApi(mainApiConfig.url);
 
   /* ******** POPUP SIGNIN INIT ******** */
   const popup = document.querySelector(".popup");
@@ -129,7 +129,6 @@ import Header from "./components/Header.js";
           });
         }
         if (e.target.classList.contains("popup__sign_link")) {
-          console.log('auth');
           newPopup.open();
           const popBtn = popup.querySelector(".popup__button");
           const form = popup.querySelector("form");

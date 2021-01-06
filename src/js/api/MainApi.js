@@ -6,7 +6,6 @@ export default class MainApi {
       authorization:
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmNiYjY4ODI1ZGE4MmQ4Zjk4YWRiYjkiLCJpYXQiOjE2MDcxODYxNzYsImV4cCI6MTYwNzc5MDk3Nn0.m82mYbWLTfbH-RiuBeZ9tsm2Ib5TvTKY7UfEsDIus48",
     };
-    console.log("base ", this.baseUrl);
   }
 
   signup(data) {
@@ -94,7 +93,6 @@ export default class MainApi {
   }
 
   createArticle(article, keyword) {
-    console.log(article.publishedAt);
     return fetch(`${this.baseUrl}/articles`, {
       method: "POST",
       headers: {
@@ -133,9 +131,6 @@ export default class MainApi {
         "Content-Type": "application/json",
         'Authorization': localStorage.getItem("token"),
       },
-      // body: JSON.stringify({
-      //   _id: id,
-      // })
     })
     .then(res => {
       if (!res.ok) {
