@@ -1,0 +1,19 @@
+.popup__form_input {
+  border: none;
+  border-bottom: 1px solid #000;
+  opacity: .2;
+  height: 40px;
+
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.popup__form_input:focus {
+  outline: none;
+  opacity: 1;
+}

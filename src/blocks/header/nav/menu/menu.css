@@ -1,0 +1,11 @@
+.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.menu:last-child {
+  margin-right: 0;
+}

@@ -1,0 +1,8 @@
+.api-error {
+  text-align: center;
+  width: 50%;
+  margin: 20px auto 80px;
+  letter-spacing: 1px;
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.3);
+}

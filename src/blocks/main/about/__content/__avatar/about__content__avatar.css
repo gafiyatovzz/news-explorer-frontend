@@ -1,0 +1,17 @@
+.about__content__avatar {
+  border-radius: 1000px;
+  /* background: url(../../../../../utils/images/image-03.png) no-repeat; */
+  background-size: contain;
+  width: 464px;
+}
+
+.about__content__avatar_img {
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about__content__avatar {
+    width: 232px;
+    height: 232px;
+  }
+}

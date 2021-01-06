@@ -1,0 +1,12 @@
+.button__auth {
+  height: 48px;
+  width: 100%;
+}
+
+.button__auth_dark {
+  border-color: black;
+}
+
+.button__auth_dark span {
+  color: black;
+}

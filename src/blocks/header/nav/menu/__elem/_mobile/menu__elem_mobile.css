@@ -1,0 +1,5 @@
+@media only screen and (max-width: 767px) {
+  .menu__elem_mobile {
+    display: block;
+  }
+}

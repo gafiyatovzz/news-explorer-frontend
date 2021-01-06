@@ -1,0 +1,26 @@
+.popup__content {
+  max-width: 430px;
+  width: 100%;
+  background: #fff;
+  padding: 35px;
+  border-radius: 16px;
+  position: relative;
+}
+
+.popup__close {
+  position: absolute;
+  top: -30px;
+  right: -35px;
+}
+
+@media (max-width: 505px) {
+  .popup__content {
+    height: 90%;
+    top: 60px;
+  }
+
+  .popup__close {
+    top: -40px;
+    right: 10px;
+  }
+}

@@ -1,0 +1,22 @@
+.nav__mobile-wrapper {
+  width: 100vw;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+
+._dark {
+  background: #1A1B22;
+}
+
+.nav__mobile-wrapper_head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  background: #1A1B22;
+  padding: 0 16px;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}

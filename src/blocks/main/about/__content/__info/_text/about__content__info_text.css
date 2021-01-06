@@ -1,0 +1,18 @@
+.about__content__info_text {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+
+  margin: 0 0 40px 0;
+  color: #1A1B22;
+}
+
+@media only screen and (max-width: 1024px) {
+  .about__content__info_text {
+    font-size: 18px;
+  }
+}

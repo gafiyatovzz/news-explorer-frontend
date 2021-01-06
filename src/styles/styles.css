@@ -1,0 +1,74 @@
+@import '../vendor/normalize.css';
+@import '../vendor/fonts/fonts.css';
+@import '../blocks/index.css';
+
+/* ******** UI ******** */
+@import '../blocks/ui/button/button.css';
+@import '../blocks/ui/button/__auth.css';
+@import '../blocks/ui/button/action/burger-menu.css';
+@import '../blocks/ui/button/action/close.css';
+@import '../blocks/ui/form/form.css';
+@import '../blocks/ui/form/__input/form__input.css';
+@import '../blocks/ui/form/__button/form__button.css';
+@import '../blocks/ui/button/action/logout.css';
+
+/* ******** HEADER ******** */
+@import '../blocks/header/header.css';
+@import '../blocks/header/nav/nav.css';
+@import '../blocks/header/nav/menu/menu.css';
+@import '../blocks/header/nav/menu/__elem/menu__elem.css';
+@import '../blocks/header/nav__mobile-wrapper/nav__mobile-wrapper.css';
+@import '../blocks/header/nav__mobile-wrapper/__menu/nav__mobile-wrapper__menu.css';
+@import '../blocks/header/nav__mobile-wrapper/__menu/_elem/nav__mobile-wrapper__menu.css';
+
+/* ******* BANNER ******** */
+@import '../blocks/main/banner/banner.css';
+@import '../blocks/main/banner/__content/banner__content.css';
+@import '../blocks/main/banner/__content/_text/banner__content_text.css';
+@import '../blocks/main/banner/__content/_title/banner__content_title.css';
+@import '../blocks/main/banner/__content/__form/banner__content__form.css';
+@import '../blocks/main/banner/__content/__form/_input/banner__content__form_input.css';
+@import '../blocks/main/banner/__content/__form/_btn/banner__content__form_btn.css';
+
+/* ******* RESULTS ******** */
+@import '../blocks/main/results/results.css';
+@import '../blocks/main/results/__news/results__news.css';
+@import '../blocks/main/results/__title/resutls__title.css';
+@import '../blocks/main/results/__button/results__button.css';
+@import '../blocks/main/results/__news/__card/results__news__card.css';
+@import '../blocks/main/results/__news/__card/_img/results__news__card_img.css';
+@import '../blocks/main/results/__news/__card/__content/results__news__card__content.css';
+@import '../blocks/main/results/__news/__card/__content/_date/results__news__card__content_date.css';
+@import '../blocks/main/results/__news/__card/__content/_source/results__news__card__content_source.css';
+@import '../blocks/main/results/__news/__card/__content/_text/results__news__card__content_text.css';
+@import '../blocks/main/results/__news/__card/__content/_title/results__news__card__content_title.css';
+
+/* ******* ABOUT ******** */
+@import '../blocks/main/about/about.css';
+@import '../blocks/main/about/__content/about__content.css';
+@import '../blocks/main/about/__content/__avatar/about__content__avatar.css';
+@import '../blocks/main/about/__content/__info/about__content__info.css';
+@import '../blocks/main/about/__content/__info/_title/about__content__info_title.css';
+@import '../blocks/main/about/__content/__info/_text/about__content__info_text.css';
+
+/* ******* POPUPS ******** */
+@import '../blocks/popup/popup.css';
+@import '../blocks/popup/__content/popup__content.css';
+@import '../blocks/popup/__content/__form/popup__form.css';
+@import '../blocks/popup/__content/__form/__button/popup__button.css';
+@import '../blocks/popup/__content/__form/error/errors.css';
+@import '../blocks/popup/__content/__form/input__container/input__container.css';
+@import '../blocks/popup/__content/__form/input__container/_input/popup__form_input.css';
+@import '../blocks/popup/__content/__form/input__container/_label/popup__form_label.css';
+@import '../blocks/popup/__content/__title/popup__title.css';
+@import '../blocks/popup/__content/__sign/popup__sign.css';
+
+/* ******* FOOTER ******** */
+@import '../blocks/footer/footer.css';
+@import '../blocks/footer/__content/footer__content.css';
+@import '../blocks/footer/__content/_copy/footer__content_copy.css';
+@import '../blocks/footer/__content/__nav/footer__content__nav.css';
+@import '../blocks/footer/__content/__nav/__list/_link/footer__content__nav__list_link.css';
+@import '../blocks/footer/__content/__nav/__list/footer__content__nav__list.css';
+@import '../blocks/footer/__content/__nav/__list/_social/footer__content__nav__list_social.css';
+@import '../blocks/footer/__content/__nav/__list/_elem/footer__content__nav__list_elem.css';

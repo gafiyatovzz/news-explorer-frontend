@@ -1,0 +1,47 @@
+.results__news__card_top_buttons {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.saved {
+  opacity: 1;
+}
+
+.top__buttons_container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.top__buttons_btn {
+  width: 40px;
+  height: 40px;
+  background: lightgray;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: 5px;
+}
+
+.top__buttons_btn img {
+  opacity: .5;
+}
+
+.top__buttons_text {
+  width: 182px;
+  height: 40px;
+  background: #d3d3d3;
+  border-radius: 8px;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.top__buttons_btn.btn-wishlist:hover  {
+  cursor: pointer;
+}
+
+

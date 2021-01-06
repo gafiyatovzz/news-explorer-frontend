@@ -1,0 +1,8 @@
+.footer__content__nav__list_social {
+  flex-direction: row;
+ justify-content: flex-end;
+}
+
+.footer__content__nav__list_social > li:last-of-type {
+  margin: 0;
+}

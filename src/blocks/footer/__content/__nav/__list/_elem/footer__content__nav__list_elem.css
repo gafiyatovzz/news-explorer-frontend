@@ -1,0 +1,14 @@
+.footer__content__nav__list_elem {
+  margin-right: 28px;
+}
+
+
+@media only screen and (max-width: 495px) {
+  .footer__content__nav__list_elem {
+    margin-bottom: 24px;
+  }
+
+  .footer__content__nav__lsit_elem:last-of-type {
+    margin-right: 28px;
+  }
+}

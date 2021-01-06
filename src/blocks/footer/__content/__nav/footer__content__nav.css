@@ -1,0 +1,15 @@
+.footer__content__nav {
+  display: flex;
+  width: 50%;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media only screen and (max-width: 495px) {
+  .footer__content__nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: baseline;
+  }
+}

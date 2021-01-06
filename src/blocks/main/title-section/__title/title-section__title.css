@@ -1,0 +1,11 @@
+.title-section__title {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+  color: rgba(26, 27, 34, 0.5);
+  margin: 0;
+}
+

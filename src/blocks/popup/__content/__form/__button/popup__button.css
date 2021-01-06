@@ -1,0 +1,11 @@
+.popup__button {
+  background: #2F71E5;
+  max-width: 360px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.popup__button:disabled {
+  background: #000;
+  opacity: .2;
+}

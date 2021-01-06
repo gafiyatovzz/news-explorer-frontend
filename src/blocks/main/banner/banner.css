@@ -1,0 +1,14 @@
+.banner {
+  background: url(../../../assets/images/georgiadelotzUsJoNxLaNounsplash.png) no-repeat ;
+  background-size: cover;
+  width: 100%;
+  position: relative;
+  color: #fff;
+}
+
+@media only screen and (max-width: 1024px) {
+  .banner {
+    background-size: cover;
+    background-position: center;
+  }
+}

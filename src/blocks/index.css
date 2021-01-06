@@ -1,0 +1,58 @@
+
+html {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+p {
+  padding: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.root {
+  padding: 0 104px;
+  width: calc(100% - (104px * 2));
+}
+
+@media only screen and (max-width: 1024px) {
+  .root {
+    padding: 0 40px;
+    width: calc(100% - (40px * 2));
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .root {
+    padding: 0 16px;
+    width: calc(100% - (16px * 2));
+  }
+}

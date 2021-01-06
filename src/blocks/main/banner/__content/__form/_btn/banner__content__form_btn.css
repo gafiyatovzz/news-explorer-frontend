@@ -1,0 +1,7 @@
+@media only screen and (max-width: 480px) {
+  .banner__content__form_btn {
+    position: relative;
+    width: 100%;
+    height: 56px;
+  }
+}

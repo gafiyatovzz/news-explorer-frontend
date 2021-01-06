@@ -1,0 +1,7 @@
+.error-message {
+  line-height: 1.3;
+  color: red;
+  font-size: 14px;
+  position: absolute;
+  bottom: 15px;
+}

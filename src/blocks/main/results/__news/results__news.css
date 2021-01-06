@@ -1,0 +1,24 @@
+.results__news {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 400px));
+  column-gap: 16px;
+  row-gap: 16px;
+  justify-content: center;
+  margin: 0 auto 64px;
+  position: relative;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1024px) {
+  .results__news {
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    column-gap: 16px;
+    row-gap: 16px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .results__news {
+    margin-bottom: 15px;
+  }
+}
